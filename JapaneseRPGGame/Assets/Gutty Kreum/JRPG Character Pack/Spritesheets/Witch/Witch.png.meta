@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Witch_5: -4185743899213034342
+      Witch_15: -7008552921514600276
+      Witch_29: 4616960598983844017
+      Witch_11: 8652615095614079881
+      Witch_12: -7171345580371171702
+      Witch_4: 6024260289415896288
+      Witch_30: 2497084322206513394
+      Witch_24: 6637661100556193151
+      Witch_26: 8143456569172458409
+      Witch_3: -415884306809206785
+      Witch_27: -8360797325603667156
+      Witch_6: -4061301935467700799
+      Witch_8: -7039806119019149545
+      Witch_21: 5858537049337126219
+      Witch_13: -6680329837180301552
+      Witch_19: -8194977565487587538
+      Witch_2: -2690247425517337370
+      Witch_35: 2918060269160361912
+      Witch_31: 7594002469547104985
+      Witch_34: 4445981398009958535
+      Witch_0: -1548542343388229337
+      Witch_16: 2495336372801205573
+      Witch_7: -4435703767536504455
+      Witch_18: 6247535984556402627
+      Witch_1: 4177962916090113097
+      Witch_20: -528152543806586635
+      Witch_33: 6284571250894512191
+      Witch_14: -3916054312439093628
+      Witch_22: -7820547367805487330
+      Witch_23: -3002635272755787419
+      Witch_17: -4145294542358517050
+      Witch_9: 2331460665371683603
+      Witch_25: -5621062757912389699
+      Witch_28: 6314062053392055923
+      Witch_10: 8562662179011235823
+      Witch_32: 6232778003584627221
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

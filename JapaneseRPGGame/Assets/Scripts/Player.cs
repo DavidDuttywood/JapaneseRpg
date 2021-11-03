@@ -9,8 +9,9 @@ public class Player : Mover
     public Transform interactor;
     public SpriteRenderer spriteRenderer;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 

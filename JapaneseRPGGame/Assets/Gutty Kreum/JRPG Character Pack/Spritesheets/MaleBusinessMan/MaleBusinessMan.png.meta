@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MaleBusinessMan_14: 6481313399428068922
+      MaleBusinessMan_30: -8131524862621740133
+      MaleBusinessMan_34: -1136609872291389194
+      MaleBusinessMan_20: 4362939917135127584
+      MaleBusinessMan_9: -1520438006694593099
+      MaleBusinessMan_16: -7486266968950722580
+      MaleBusinessMan_35: -4885460844749611046
+      MaleBusinessMan_26: 4221896080229468823
+      MaleBusinessMan_7: -1541172270206165210
+      MaleBusinessMan_25: 1895632252255525643
+      MaleBusinessMan_27: 5491202802614707961
+      MaleBusinessMan_32: 5054827065396264304
+      MaleBusinessMan_12: -5558181638047575969
+      MaleBusinessMan_4: 2830923798777250561
+      MaleBusinessMan_10: 8491142934392883010
+      MaleBusinessMan_31: -2244872413570705892
+      MaleBusinessMan_0: 4766221418814262111
+      MaleBusinessMan_6: 4518559035492712794
+      MaleBusinessMan_19: -234841750378460675
+      MaleBusinessMan_11: -6528703356649848236
+      MaleBusinessMan_29: 3984378982950141129
+      MaleBusinessMan_15: 7139530743703161980
+      MaleBusinessMan_23: 8452933568916942094
+      MaleBusinessMan_13: 6193896236861271536
+      MaleBusinessMan_17: -3849159396559591078
+      MaleBusinessMan_3: -9068646155443108508
+      MaleBusinessMan_21: 4454681010228117829
+      MaleBusinessMan_24: -6369043596553411214
+      MaleBusinessMan_1: 7997734508279315133
+      MaleBusinessMan_28: 2731603618783651809
+      MaleBusinessMan_33: -7396088173858516098
+      MaleBusinessMan_5: -3152025396726309197
+      MaleBusinessMan_22: 946378715715128793
+      MaleBusinessMan_2: -3501472718847690559
+      MaleBusinessMan_18: 26280226731560082
+      MaleBusinessMan_8: -1631726216930288840
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

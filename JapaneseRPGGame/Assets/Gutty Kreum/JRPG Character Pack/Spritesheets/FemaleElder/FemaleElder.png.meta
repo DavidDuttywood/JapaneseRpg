@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      FemaleElder_22: -8708611137579895713
+      FemaleElder_33: 7446636669307959228
+      FemaleElder_16: 4074811231585496251
+      FemaleElder_35: -3524847060816672706
+      FemaleElder_4: -3359933163474657861
+      FemaleElder_13: 6135728720307403075
+      FemaleElder_5: 4252170144246716217
+      FemaleElder_10: -5634831445287211650
+      FemaleElder_15: 2132225023802601072
+      FemaleElder_11: 156842143000542992
+      FemaleElder_18: 734144641437079049
+      FemaleElder_8: 3381935274346740657
+      FemaleElder_19: -4123043567367384379
+      FemaleElder_26: 1874080346177653460
+      FemaleElder_20: 4831044224026737480
+      FemaleElder_0: 6994826097779115174
+      FemaleElder_32: 1707750724284082942
+      FemaleElder_9: 991580900331212767
+      FemaleElder_24: -6171362815042428067
+      FemaleElder_23: -8538147704840867204
+      FemaleElder_7: 7244669145260573542
+      FemaleElder_6: 4548279440970555869
+      FemaleElder_29: -2222306847789697378
+      FemaleElder_31: -4754408977393025911
+      FemaleElder_25: -3672572716057257672
+      FemaleElder_34: -3893881995614887888
+      FemaleElder_3: -8241793217565893296
+      FemaleElder_28: -3008703739034450561
+      FemaleElder_1: -8938736868786695870
+      FemaleElder_14: -4318616611148943087
+      FemaleElder_17: -6396468971924828099
+      FemaleElder_21: 3727584084478334780
+      FemaleElder_2: -8743989819958337839
+      FemaleElder_12: 3039311183710765516
+      FemaleElder_27: -3095634816532136750
+      FemaleElder_30: 3464440872970998299
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

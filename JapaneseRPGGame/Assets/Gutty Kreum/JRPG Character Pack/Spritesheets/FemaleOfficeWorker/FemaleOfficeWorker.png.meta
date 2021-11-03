@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      FemaleOfficeWorker_26: 5064581566216074265
+      FemaleOfficeWorker_11: 6898196953484077979
+      FemaleOfficeWorker_8: 2402966692772142292
+      FemaleOfficeWorker_27: 5213286463135786425
+      FemaleOfficeWorker_32: -1870555850769796866
+      FemaleOfficeWorker_15: -8397290975128964880
+      FemaleOfficeWorker_19: 619248900343113975
+      FemaleOfficeWorker_34: 3968203317687051095
+      FemaleOfficeWorker_20: 1505063044322982204
+      FemaleOfficeWorker_17: -4399745701179913899
+      FemaleOfficeWorker_9: -2469271622689537260
+      FemaleOfficeWorker_22: -371845040121233570
+      FemaleOfficeWorker_14: -5430573271290642402
+      FemaleOfficeWorker_4: 3016204089966743365
+      FemaleOfficeWorker_5: -7523156990665975780
+      FemaleOfficeWorker_25: 2679086361913385032
+      FemaleOfficeWorker_10: 2000214873802915329
+      FemaleOfficeWorker_35: 9155522486732238996
+      FemaleOfficeWorker_0: -2343039542526774648
+      FemaleOfficeWorker_7: -2888483512141076699
+      FemaleOfficeWorker_23: 422438302117234760
+      FemaleOfficeWorker_6: -3027007464237015729
+      FemaleOfficeWorker_24: 7946204717560301430
+      FemaleOfficeWorker_33: 1960249446447566410
+      FemaleOfficeWorker_18: 2791921371682962833
+      FemaleOfficeWorker_28: -2894269067517774433
+      FemaleOfficeWorker_13: -4855261690091639603
+      FemaleOfficeWorker_30: 4335750598780730090
+      FemaleOfficeWorker_29: 2746991595967866975
+      FemaleOfficeWorker_16: 1081534143575761988
+      FemaleOfficeWorker_31: -6363093763515891461
+      FemaleOfficeWorker_3: -813516216409628826
+      FemaleOfficeWorker_12: 419707416910279430
+      FemaleOfficeWorker_2: 7005823541194316264
+      FemaleOfficeWorker_21: 136185420723368976
+      FemaleOfficeWorker_1: 1072254109573413987
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

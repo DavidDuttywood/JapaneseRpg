@@ -6,7 +6,7 @@ using UnityEngine;
 //test version control
 public abstract class Mover : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     private Vector2 moveDelta;
     protected float moveSpeed = 3.0f;
     public Animator animator;

@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MaleBusinessManOld_30: 8812330863749037127
+      MaleBusinessManOld_34: -2147496124432406848
+      MaleBusinessManOld_11: -3400637656917875322
+      MaleBusinessManOld_24: 287364239246589086
+      MaleBusinessManOld_9: -1128940588465857964
+      MaleBusinessManOld_27: -2688880009422231037
+      MaleBusinessManOld_13: -4667739281990378549
+      MaleBusinessManOld_31: 4928094254866882292
+      MaleBusinessManOld_29: -6106427024359569297
+      MaleBusinessManOld_15: -5884423507565807549
+      MaleBusinessManOld_20: 6861847581732494687
+      MaleBusinessManOld_17: 5474584280563955432
+      MaleBusinessManOld_22: -5871185429797735714
+      MaleBusinessManOld_6: -7590300807062327669
+      MaleBusinessManOld_5: 8404405436405439676
+      MaleBusinessManOld_12: 9020851926137463363
+      MaleBusinessManOld_2: -470645986942940488
+      MaleBusinessManOld_25: -5360865481681194379
+      MaleBusinessManOld_3: -4936643188350574114
+      MaleBusinessManOld_8: 1848258863044250587
+      MaleBusinessManOld_16: -8002536280349760609
+      MaleBusinessManOld_18: -8795269531502957471
+      MaleBusinessManOld_21: 4241550365292184960
+      MaleBusinessManOld_35: 3598701647515243592
+      MaleBusinessManOld_14: 1085714595874746769
+      MaleBusinessManOld_26: -3894272795915336879
+      MaleBusinessManOld_23: -5291325889617464683
+      MaleBusinessManOld_28: 2985178276389804356
+      MaleBusinessManOld_1: 1418977665827453013
+      MaleBusinessManOld_7: -1202097497560998001
+      MaleBusinessManOld_10: -6854155846364073919
+      MaleBusinessManOld_33: 6935133053901426697
+      MaleBusinessManOld_0: 1311850489865797769
+      MaleBusinessManOld_32: 260732130231914077
+      MaleBusinessManOld_4: 4832882765645622340
+      MaleBusinessManOld_19: 8216962835862372576
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

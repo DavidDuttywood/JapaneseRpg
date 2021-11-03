@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MaleTrafficCop_5: -5094295628387761479
+      MaleTrafficCop_33: -5566943741687651023
+      MaleTrafficCop_18: -7574106881155342896
+      MaleTrafficCop_35: 3426493451389610756
+      MaleTrafficCop_31: -7266499271994425657
+      MaleTrafficCop_14: 7658006006518093828
+      MaleTrafficCop_2: -2594744491264342879
+      MaleTrafficCop_3: 1283856353231479175
+      MaleTrafficCop_4: 2989208798883838667
+      MaleTrafficCop_30: -7526909447294158501
+      MaleTrafficCop_9: -8894137805466154951
+      MaleTrafficCop_16: 8490739162600096205
+      MaleTrafficCop_19: 4632235659837320771
+      MaleTrafficCop_0: 3977834045963510289
+      MaleTrafficCop_17: 4569061704347830366
+      MaleTrafficCop_23: -3156757998342070336
+      MaleTrafficCop_21: 1096893591469134907
+      MaleTrafficCop_27: -8281371083766895323
+      MaleTrafficCop_12: -2110216861608682177
+      MaleTrafficCop_13: -697226364467415292
+      MaleTrafficCop_11: -4228213593861206284
+      MaleTrafficCop_25: 155528667062434607
+      MaleTrafficCop_8: -2793219377682741533
+      MaleTrafficCop_15: 4849645168312068813
+      MaleTrafficCop_20: 4555263007033077778
+      MaleTrafficCop_26: -7998312358556435690
+      MaleTrafficCop_29: -5758611082253233394
+      MaleTrafficCop_7: 8728369630212291165
+      MaleTrafficCop_32: 6952618295676910573
+      MaleTrafficCop_10: -7873695212778186121
+      MaleTrafficCop_24: -5459090648402806194
+      MaleTrafficCop_1: 769503746329206593
+      MaleTrafficCop_28: 7763105243519379627
+      MaleTrafficCop_34: 5178564103034392973
+      MaleTrafficCop_6: -7920784016849054104
+      MaleTrafficCop_22: 4981898096467140104
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

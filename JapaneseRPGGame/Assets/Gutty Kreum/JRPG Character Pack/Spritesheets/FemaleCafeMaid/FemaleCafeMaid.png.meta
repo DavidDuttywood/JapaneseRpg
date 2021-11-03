@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      FemaleCafeMaid_9: 1648584572240471293
+      FemaleCafeMaid_6: -7028634658210071671
+      FemaleCafeMaid_11: -7555826761311185240
+      FemaleCafeMaid_7: -8311957963684172896
+      FemaleCafeMaid_19: -6615437969055817440
+      FemaleCafeMaid_10: 4317248017937158199
+      FemaleCafeMaid_28: 8480018784343873981
+      FemaleCafeMaid_30: -7894233457604299920
+      FemaleCafeMaid_35: 5996388370442285786
+      FemaleCafeMaid_0: 6336818235175441570
+      FemaleCafeMaid_25: -3203884772340973784
+      FemaleCafeMaid_4: -254488378679922686
+      FemaleCafeMaid_14: 1788612147586966232
+      FemaleCafeMaid_27: -1557986953268028864
+      FemaleCafeMaid_16: -649907260492625221
+      FemaleCafeMaid_22: 517584461768835725
+      FemaleCafeMaid_2: 6556380814630546555
+      FemaleCafeMaid_33: -2796668574048257603
+      FemaleCafeMaid_3: 4959290351934362832
+      FemaleCafeMaid_29: -8450179944525255059
+      FemaleCafeMaid_34: -4560409514829538774
+      FemaleCafeMaid_12: -641791599147160122
+      FemaleCafeMaid_23: -1567162867112290751
+      FemaleCafeMaid_15: -3817806176156134617
+      FemaleCafeMaid_24: -406448677703622486
+      FemaleCafeMaid_21: -9073674111192533332
+      FemaleCafeMaid_8: -1618649649144537055
+      FemaleCafeMaid_1: 7790611152205881040
+      FemaleCafeMaid_31: -8158658869222312543
+      FemaleCafeMaid_18: 1446678088372043672
+      FemaleCafeMaid_20: 260621807360880704
+      FemaleCafeMaid_13: -6472640991997264778
+      FemaleCafeMaid_26: 2277229577416120529
+      FemaleCafeMaid_5: -512112491952374747
+      FemaleCafeMaid_17: 1558932458288628410
+      FemaleCafeMaid_32: -6150434407899147784
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

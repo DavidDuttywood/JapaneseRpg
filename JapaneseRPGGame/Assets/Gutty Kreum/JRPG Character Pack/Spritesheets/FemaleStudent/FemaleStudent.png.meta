@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      FemaleStudent_30: -7145384547247357748
+      FemaleStudent_27: 2293659836094078838
+      FemaleStudent_21: 6820003173586034352
+      FemaleStudent_7: 3701933183451020598
+      FemaleStudent_23: -6917474439335338378
+      FemaleStudent_24: 7732060492252763511
+      FemaleStudent_13: 2599243799338056925
+      FemaleStudent_11: -4060116636053026536
+      FemaleStudent_19: -5696056732041689593
+      FemaleStudent_26: 5678754661219375357
+      FemaleStudent_15: -913419537227233159
+      FemaleStudent_20: 6499518735532570250
+      FemaleStudent_32: 5178971203436953363
+      FemaleStudent_6: 785569206720887167
+      FemaleStudent_34: 1584688471335422817
+      FemaleStudent_18: 2548669815353509233
+      FemaleStudent_12: 3267747144839804371
+      FemaleStudent_29: 1070119047154053584
+      FemaleStudent_33: -5203033387672739762
+      FemaleStudent_22: 797135559416358732
+      FemaleStudent_28: -5007274320601526781
+      FemaleStudent_10: 7152899965613180228
+      FemaleStudent_14: -867758440274586216
+      FemaleStudent_0: -2400567414987247930
+      FemaleStudent_31: -7229140587977764527
+      FemaleStudent_9: 10125865336665535
+      FemaleStudent_17: 7928785644798782338
+      FemaleStudent_5: -9021291789674653982
+      FemaleStudent_4: -6000650823572950119
+      FemaleStudent_2: -3163844963135948382
+      FemaleStudent_1: -6107341621631277039
+      FemaleStudent_16: -2408085019577428914
+      FemaleStudent_3: -5281941965903463742
+      FemaleStudent_8: -2295195236429059539
+      FemaleStudent_25: 8406613280133182343
+      FemaleStudent_35: -6099733727999857853
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

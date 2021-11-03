@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MalePunk_24: -7304172622226570945
+      MalePunk_2: -4455857772090762791
+      MalePunk_15: 2531648896654735810
+      MalePunk_20: 6385771304755096962
+      MalePunk_23: 5483149393233172436
+      MalePunk_18: 6499028038969602513
+      MalePunk_19: -4747331805925961934
+      MalePunk_34: -1489635767665220312
+      MalePunk_17: -7691526624147047352
+      MalePunk_25: 4715452102329655971
+      MalePunk_11: -4217059470171315129
+      MalePunk_16: -5959622305834228672
+      MalePunk_28: 7659376663988927340
+      MalePunk_14: 2735629387241305639
+      MalePunk_26: -1650149718552093053
+      MalePunk_7: -6289390145555156973
+      MalePunk_29: -3098914302739115061
+      MalePunk_33: -3542564363557731733
+      MalePunk_12: 1828243471038398071
+      MalePunk_1: -683916988167379320
+      MalePunk_4: 4622609531303858372
+      MalePunk_30: -4873357407070085159
+      MalePunk_27: 4586206798497597868
+      MalePunk_0: 2603747768902582850
+      MalePunk_9: 2527989271440916896
+      MalePunk_10: 5650188785228481842
+      MalePunk_6: 1315608046045489338
+      MalePunk_21: 791747622805634215
+      MalePunk_32: -6459667222041912538
+      MalePunk_13: 7705948318273414046
+      MalePunk_8: -589047643546648985
+      MalePunk_31: 4646501106953586601
+      MalePunk_35: 3828003769999788464
+      MalePunk_5: -7903513582343099129
+      MalePunk_3: 395046743971499617
+      MalePunk_22: -3892497530564303846
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

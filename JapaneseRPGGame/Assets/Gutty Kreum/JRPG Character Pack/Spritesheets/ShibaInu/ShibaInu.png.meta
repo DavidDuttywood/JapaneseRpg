@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ShibaInu_24: -5993153363556060674
+      ShibaInu_28: -823311356760678341
+      ShibaInu_12: 3112439841086825091
+      ShibaInu_18: 8669832648923103537
+      ShibaInu_25: -3228651282945430804
+      ShibaInu_2: -6667879638130144554
+      ShibaInu_29: -5728924218243094829
+      ShibaInu_34: 8438246106431591742
+      ShibaInu_20: 1780866829598596516
+      ShibaInu_21: -4337031677718623842
+      ShibaInu_27: -5737371119416002531
+      ShibaInu_9: 6328919226956332162
+      ShibaInu_5: -3907167525178913553
+      ShibaInu_19: 5522042029157725224
+      ShibaInu_32: 6814244155690461337
+      ShibaInu_10: 5036341850549195117
+      ShibaInu_30: -5629753517732608670
+      ShibaInu_0: -7554296478536651278
+      ShibaInu_33: -222588349000789463
+      ShibaInu_3: -8124019634820667216
+      ShibaInu_35: 6202820231270877226
+      ShibaInu_15: 7456613779733185958
+      ShibaInu_13: -6291784258880232014
+      ShibaInu_1: 2571223153109940850
+      ShibaInu_31: 6039384107762494879
+      ShibaInu_11: 5635796810513430365
+      ShibaInu_22: 2220063320094201923
+      ShibaInu_4: -5590803563058863665
+      ShibaInu_23: 8769307609662421110
+      ShibaInu_7: 567357572072537753
+      ShibaInu_8: -7642765172211264421
+      ShibaInu_14: 7976882905045698988
+      ShibaInu_16: -3519650135389671859
+      ShibaInu_17: -2958126172549965981
+      ShibaInu_26: 489263296708477351
+      ShibaInu_6: -1020492457690683235
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

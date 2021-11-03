@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MaleStudent_18: 1625612116409125160
+      MaleStudent_31: 8833325825496352484
+      MaleStudent_0: 5545111546368085564
+      MaleStudent_22: -7227414956066934703
+      MaleStudent_3: 6830147886931106388
+      MaleStudent_34: 7831485048107176973
+      MaleStudent_13: 1072708151234100175
+      MaleStudent_28: -6011749174877465879
+      MaleStudent_6: -2082201546864365199
+      MaleStudent_8: -5339528088701504586
+      MaleStudent_29: -8818954903365471143
+      MaleStudent_11: -4699185477394126214
+      MaleStudent_12: -6287531345071740915
+      MaleStudent_24: 4622484444254334818
+      MaleStudent_27: 5259610299009314463
+      MaleStudent_5: -4104008149417393104
+      MaleStudent_4: 1571713756872782881
+      MaleStudent_21: -7880408035908484054
+      MaleStudent_9: -7114192921694739887
+      MaleStudent_17: -9051356702662275429
+      MaleStudent_1: -2943707505663376074
+      MaleStudent_35: 2822398862118041988
+      MaleStudent_7: 6082430466763085262
+      MaleStudent_23: -8459068785128480368
+      MaleStudent_33: -4053025929192045005
+      MaleStudent_30: 6026800855379289330
+      MaleStudent_16: 4468727507247796335
+      MaleStudent_19: -1530990931224605715
+      MaleStudent_32: -2265239082814293641
+      MaleStudent_2: 9071351178621881883
+      MaleStudent_15: -3853708911564096877
+      MaleStudent_14: -700189615703022494
+      MaleStudent_20: 2407755719132097433
+      MaleStudent_10: 8194916605674636877
+      MaleStudent_26: -7896374060699983508
+      MaleStudent_25: 6972782135619630306
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

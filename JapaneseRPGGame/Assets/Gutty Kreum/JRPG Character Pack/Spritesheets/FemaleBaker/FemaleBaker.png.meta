@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      FemaleBaker_34: -6980230731483200510
+      FemaleBaker_33: 268689951884977922
+      FemaleBaker_5: 815702162987842525
+      FemaleBaker_2: 6488888596696687816
+      FemaleBaker_30: -5934715401911629907
+      FemaleBaker_35: 1966493652433888752
+      FemaleBaker_11: -5123704761024515279
+      FemaleBaker_15: 6629651215815207021
+      FemaleBaker_9: -5074044752186484294
+      FemaleBaker_28: 8973882508241376951
+      FemaleBaker_20: -4716314584209066549
+      FemaleBaker_18: -7046702346995494994
+      FemaleBaker_10: 3039432388695185847
+      FemaleBaker_7: 7958094063218804927
+      FemaleBaker_17: -6691987805380524786
+      FemaleBaker_19: 462405786366944962
+      FemaleBaker_31: 1664719620258898156
+      FemaleBaker_0: -8076542536797633547
+      FemaleBaker_32: -8373682430472897110
+      FemaleBaker_24: 1654945052838154698
+      FemaleBaker_23: 4920681649580658685
+      FemaleBaker_3: -4666938907715279205
+      FemaleBaker_4: -249762676790826456
+      FemaleBaker_25: -8718811235674729124
+      FemaleBaker_26: 5077462785873644759
+      FemaleBaker_21: 7219626073678655679
+      FemaleBaker_8: 5777762874180574282
+      FemaleBaker_27: -6228420165495146523
+      FemaleBaker_16: -8886380804214006478
+      FemaleBaker_14: 4502529605237438917
+      FemaleBaker_22: -3795986411668269548
+      FemaleBaker_1: -4260971269309834492
+      FemaleBaker_29: 330784654052293401
+      FemaleBaker_6: -5254056321929953150
+      FemaleBaker_12: -4314382405309684947
+      FemaleBaker_13: 8790735989196475950
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

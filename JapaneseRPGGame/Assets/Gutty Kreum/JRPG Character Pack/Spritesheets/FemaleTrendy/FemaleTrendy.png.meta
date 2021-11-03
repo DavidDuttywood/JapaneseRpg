@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      FemaleTrendy_18: 6126009243369069835
+      FemaleTrendy_17: 417065493031694103
+      FemaleTrendy_28: -7412353026958220400
+      FemaleTrendy_11: -435322975368483109
+      FemaleTrendy_25: -5657799936201128635
+      FemaleTrendy_31: -3001017784497528784
+      FemaleTrendy_22: -1854867031085243758
+      FemaleTrendy_24: -3757813292895263198
+      FemaleTrendy_23: -4560395812462885395
+      FemaleTrendy_14: -357726797094174241
+      FemaleTrendy_5: -1573158674346052373
+      FemaleTrendy_7: -2711426880130114763
+      FemaleTrendy_26: 6612036652401186559
+      FemaleTrendy_29: 4882977867333792189
+      FemaleTrendy_6: 1290986993165293063
+      FemaleTrendy_19: -9056270522724852195
+      FemaleTrendy_34: 5369912417376676295
+      FemaleTrendy_16: 5421840035259495451
+      FemaleTrendy_8: -8697771183002607449
+      FemaleTrendy_12: -3297349979841551928
+      FemaleTrendy_27: -1618338941990292517
+      FemaleTrendy_4: -8181232251302019600
+      FemaleTrendy_2: -4295108588598997694
+      FemaleTrendy_15: 6276487138023550440
+      FemaleTrendy_35: 1518668442390773911
+      FemaleTrendy_20: -605898464133470252
+      FemaleTrendy_30: 8725140866773473985
+      FemaleTrendy_10: 6352030158441970806
+      FemaleTrendy_0: -7066974773765645365
+      FemaleTrendy_33: 8250153868756883117
+      FemaleTrendy_3: 3634367387650050981
+      FemaleTrendy_1: -933299198987498132
+      FemaleTrendy_21: -3315204939397198251
+      FemaleTrendy_32: -5781386992702253243
+      FemaleTrendy_9: 5880507219628155097
+      FemaleTrendy_13: -2264613291194192655
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
