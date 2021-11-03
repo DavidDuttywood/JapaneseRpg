@@ -1,0 +1,85 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+//For NPC's that move in fixed 2d areas.
+public class Wanderer : Mover
+{
+    public Animator animator;
+
+    public bool isWalking;
+    public float walkTime;
+    public float waitTime;
+    private float walkCounter;
+    private float waitCounter;
+
+    private int walkDirection;
+    protected override void Start()
+    {
+        base.Start();
+        waitCounter = waitTime;
+        walkCounter = walkTime;
+        ChooseDirection();
+    }
+
+    public void ChooseDirection()
+    {
+        walkDirection = Random.Range(0, 4);
+        isWalking = true;
+        walkCounter = walkTime;
+    }
+
+    private void Wander(Vector2 movement)
+    {
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        UpdateMotor(movement);
+    }
+   
+
+    void Update()
+    {
+        if (isWalking)
+        {
+            walkCounter -= Time.deltaTime;
+            if (walkCounter < 0)
+            {
+                isWalking = false;
+                waitCounter = waitTime;
+            }
+
+            switch (walkDirection)
+            {
+                case 0:
+                    Wander(new Vector2(0,1));
+                    break;
+
+                case 1:
+                    Wander(new Vector2(0, -1));
+                    break;
+
+                case 2:
+                    Wander(new Vector2(-1, 0));
+                    break;
+
+                case 3:
+                    Wander(new Vector2(1, 0));
+                    break;
+            }
+        }
+        else
+        {
+            animator.SetFloat("Horizontal", 0);
+            animator.SetFloat("Vertical", 0);
+            animator.SetFloat("Speed", 0);
+
+            waitCounter -= Time.deltaTime;
+            if (waitCounter < 0)
+            {
+                ChooseDirection();
+            }
+        }
+    }
+}
