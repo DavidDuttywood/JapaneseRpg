@@ -966,7 +966,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MaleBusinessMan_14: 6481313399428068922
       MaleBusinessMan_30: -8131524862621740133
       MaleBusinessMan_34: -1136609872291389194
       MaleBusinessMan_20: 4362939917135127584
@@ -979,6 +978,7 @@ TextureImporter:
       MaleBusinessMan_27: 5491202802614707961
       MaleBusinessMan_32: 5054827065396264304
       MaleBusinessMan_12: -5558181638047575969
+      MaleBusinessMan_14: 6481313399428068922
       MaleBusinessMan_4: 2830923798777250561
       MaleBusinessMan_10: 8491142934392883010
       MaleBusinessMan_31: -2244872413570705892

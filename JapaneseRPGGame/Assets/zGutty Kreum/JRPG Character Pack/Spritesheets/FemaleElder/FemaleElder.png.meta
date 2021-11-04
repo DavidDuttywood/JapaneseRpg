@@ -966,7 +966,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FemaleElder_22: -8708611137579895713
       FemaleElder_33: 7446636669307959228
       FemaleElder_16: 4074811231585496251
       FemaleElder_35: -3524847060816672706
@@ -983,6 +982,7 @@ TextureImporter:
       FemaleElder_20: 4831044224026737480
       FemaleElder_0: 6994826097779115174
       FemaleElder_32: 1707750724284082942
+      FemaleElder_30: 3464440872970998299
       FemaleElder_9: 991580900331212767
       FemaleElder_24: -6171362815042428067
       FemaleElder_23: -8538147704840867204
@@ -996,12 +996,12 @@ TextureImporter:
       FemaleElder_28: -3008703739034450561
       FemaleElder_1: -8938736868786695870
       FemaleElder_14: -4318616611148943087
-      FemaleElder_17: -6396468971924828099
+      FemaleElder_22: -8708611137579895713
       FemaleElder_21: 3727584084478334780
-      FemaleElder_2: -8743989819958337839
-      FemaleElder_12: 3039311183710765516
+      FemaleElder_17: -6396468971924828099
       FemaleElder_27: -3095634816532136750
-      FemaleElder_30: 3464440872970998299
+      FemaleElder_12: 3039311183710765516
+      FemaleElder_2: -8743989819958337839
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -966,9 +966,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FemaleTrendy_18: 6126009243369069835
-      FemaleTrendy_17: 417065493031694103
       FemaleTrendy_28: -7412353026958220400
+      FemaleTrendy_17: 417065493031694103
+      FemaleTrendy_18: 6126009243369069835
       FemaleTrendy_11: -435322975368483109
       FemaleTrendy_25: -5657799936201128635
       FemaleTrendy_31: -3001017784497528784
@@ -1000,8 +1000,8 @@ TextureImporter:
       FemaleTrendy_1: -933299198987498132
       FemaleTrendy_21: -3315204939397198251
       FemaleTrendy_32: -5781386992702253243
-      FemaleTrendy_9: 5880507219628155097
       FemaleTrendy_13: -2264613291194192655
+      FemaleTrendy_9: 5880507219628155097
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
