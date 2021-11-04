@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3932545643194632481}
   - component: {fileID: 9151229127322002120}
   m_Layer: 0
-  m_Name: npc-malePunk
+  m_Name: npc-femaleBaker
   m_TagString: npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
