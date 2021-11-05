@@ -19,11 +19,25 @@ public class InteractableNpc : Interactable
         animator = GetComponent<Animator>();
         wanderer = GetComponent<Wanderer>();
         dialogueManager = FindObjectOfType<DialogueManager>();
-        converasationManager = FindObjectOfType<ConverasationManager>();
+        if (canStartConversation)
+        {
+            converasationManager = FindObjectOfType<ConverasationManager>();
+        }
         currentLine = 0;
         dialogueInProcess = false;
     }
 
+    public void Update()
+    {
+        if (canStartConversation)
+        {
+            if (converasationManager.conversationTerminated)
+            {
+                converasationManager.conversationTerminated = false;
+                ResetDialogue();
+            }
+        }
+    }
 
     protected override void Interact()
     {
@@ -49,14 +63,21 @@ public class InteractableNpc : Interactable
         }
         else if (dialogueInProcess && currentLine == dialogueLines.Length && canStartConversation)
         {
+            //stash npc location so we can reset it after the conversation
+            GameManager.instance.npcLocation = transform;
             converasationManager.PromptConversation();
         }
         else
         {
-            dialogueInProcess = false;
-            wanderer.canMove = true;
-            dialogueManager.CloseDialogue();
-            currentLine = 0;
+            ResetDialogue();
         }
+    }
+
+    public void ResetDialogue()
+    {
+        dialogueInProcess = false;
+        wanderer.canMove = true;
+        dialogueManager.CloseDialogue();
+        currentLine = 0;
     }
 }

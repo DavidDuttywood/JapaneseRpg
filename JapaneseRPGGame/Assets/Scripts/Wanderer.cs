@@ -12,6 +12,7 @@ public class Wanderer : Mover
     private float walkCounter;
     private float waitCounter;
 
+    private int squareWalkingPattern;
     private int walkDirection;
     protected override void Start()
     {
@@ -19,6 +20,7 @@ public class Wanderer : Mover
         waitCounter = waitTime;
         walkCounter = walkTime;
         ChooseDirection();
+        squareWalkingPattern = 0;
     }
 
     public void ChooseDirection()
@@ -44,9 +46,22 @@ public class Wanderer : Mover
                 return Random.Range(2, 4);
             case "Vertical":
                 return Random.Range(0, 2);
+            case "Square":
+                return SquareWalkingPattern();
             default:
                 return Random.Range(0, 4);
         }
+    }
+
+    //this is an L shape - needs fixing
+    public int SquareWalkingPattern()
+    {
+        if(squareWalkingPattern < 4)
+        {
+            return squareWalkingPattern++;
+        }
+
+        return squareWalkingPattern = 0;
     }
 
     void OnCollisionEnter2D(Collision2D col)
