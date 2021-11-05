@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ConverasationManager : MonoBehaviour
+public class ConverasationPromptManager : MonoBehaviour
 {
     private SceneTransitionManager stm;
     public GameObject conversationStartPanel;

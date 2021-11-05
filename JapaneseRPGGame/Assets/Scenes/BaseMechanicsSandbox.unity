@@ -7964,7 +7964,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.71979904, y: 0}
+  m_AnchoredPosition: {x: -0.7197876, y: 0}
   m_SizeDelta: {x: 393.2837, y: 157.6914}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1978965752
@@ -8216,6 +8216,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6540624528480228125, guid: 725d255ea81f126409dae68bb1f0c99a, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6540624528697613268, guid: 725d255ea81f126409dae68bb1f0c99a, type: 3}
       propertyPath: m_Name
       value: SceneTransitionManager

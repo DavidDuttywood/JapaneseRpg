@@ -8,7 +8,7 @@ public class InteractableNpc : Interactable
     private Animator animator;
     private Wanderer wanderer;
     private DialogueManager dialogueManager;
-    private ConverasationManager converasationManager;
+    private ConverasationPromptManager converasationPromptManager;
     private bool dialogueInProcess;
     private int currentLine;
     public bool canStartConversation;
@@ -21,7 +21,7 @@ public class InteractableNpc : Interactable
         dialogueManager = FindObjectOfType<DialogueManager>();
         if (canStartConversation)
         {
-            converasationManager = FindObjectOfType<ConverasationManager>();
+            converasationPromptManager = FindObjectOfType<ConverasationPromptManager>();
         }
         currentLine = 0;
         dialogueInProcess = false;
@@ -31,9 +31,9 @@ public class InteractableNpc : Interactable
     {
         if (canStartConversation)
         {
-            if (converasationManager.conversationTerminated)
+            if (converasationPromptManager.conversationTerminated)
             {
-                converasationManager.conversationTerminated = false;
+                converasationPromptManager.conversationTerminated = false;
                 ResetDialogue();
             }
         }
@@ -65,7 +65,7 @@ public class InteractableNpc : Interactable
         {
             //stash npc location so we can reset it after the conversation
             GameManager.instance.npcLocation = transform;
-            converasationManager.PromptConversation();
+            converasationPromptManager.PromptConversation();
         }
         else
         {

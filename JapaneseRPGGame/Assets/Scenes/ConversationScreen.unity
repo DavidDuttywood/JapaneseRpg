@@ -504,7 +504,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &433461845
 GameObject:
@@ -963,7 +963,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &878995917
 GameObject:
@@ -1063,7 +1063,7 @@ RectTransform:
   - {fileID: 433461846}
   - {fileID: 1629369366}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1524,6 +1524,14 @@ PrefabInstance:
     - target: {fileID: 5585868664417014339, guid: 725d255ea81f126409dae68bb1f0c99a, type: 3}
       propertyPath: m_Name
       value: SceneTransitionManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540624528480228125, guid: 725d255ea81f126409dae68bb1f0c99a, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540624529012872995, guid: 725d255ea81f126409dae68bb1f0c99a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 725d255ea81f126409dae68bb1f0c99a, type: 3}
