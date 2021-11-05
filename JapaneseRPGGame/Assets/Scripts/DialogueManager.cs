@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     public string dialogueLine;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         dialougeBox.SetActive(false);
         player = FindObjectOfType<Player>();

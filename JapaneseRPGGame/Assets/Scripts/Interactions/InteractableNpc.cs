@@ -8,8 +8,10 @@ public class InteractableNpc : Interactable
     private Animator animator;
     private Wanderer wanderer;
     private DialogueManager dialogueManager;
+    private ConverasationManager converasationManager;
     private bool dialogueInProcess;
     private int currentLine;
+    public bool canStartConversation;
 
     protected override void Start()
     {
@@ -17,6 +19,7 @@ public class InteractableNpc : Interactable
         animator = GetComponent<Animator>();
         wanderer = GetComponent<Wanderer>();
         dialogueManager = FindObjectOfType<DialogueManager>();
+        converasationManager = FindObjectOfType<ConverasationManager>();
         currentLine = 0;
         dialogueInProcess = false;
     }
@@ -43,6 +46,10 @@ public class InteractableNpc : Interactable
             dialogueManager.dialogueLine = dialogueLines[currentLine];
             dialogueManager.ShowDialogue();
             currentLine++;
+        }
+        else if (dialogueInProcess && currentLine == dialogueLines.Length && canStartConversation)
+        {
+            converasationManager.PromptConversation();
         }
         else
         {
