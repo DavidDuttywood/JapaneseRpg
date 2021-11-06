@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 433461846}
   - component: {fileID: 433461848}
   - component: {fileID: 433461847}
+  - component: {fileID: 433461849}
   m_Layer: 5
   m_Name: npcImage
   m_TagString: Untagged
@@ -541,8 +542,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 408, y: -113.65}
-  m_SizeDelta: {x: 292.7886, y: 410.1381}
+  m_AnchoredPosition: {x: 378, y: -135}
+  m_SizeDelta: {x: 795.4564, y: 707.2706}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &433461847
 MonoBehaviour:
@@ -564,7 +565,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d07550d24344756438564d9fc893d7eb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56719da6ef7fc4b55a9ea57a118419dc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -582,6 +583,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433461845}
   m_CullTransparentMesh: 1
+--- !u!95 &433461849
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433461845}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4ab5d89b415d44a80854335e7f5463ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &504085260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,7 +1452,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1444172195}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1618620876}
+        m_TargetAssemblyTypeName: SceneTransitionManager, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BaseMechanicsSandbox
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1444172195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1535,6 +1568,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 725d255ea81f126409dae68bb1f0c99a, type: 3}
+--- !u!114 &1618620876 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6540624528697613270, guid: 725d255ea81f126409dae68bb1f0c99a, type: 3}
+  m_PrefabInstance: {fileID: 1618620875}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89176eb769cb7b347a8c86ba2ae93ca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1629369365
 GameObject:
   m_ObjectHideFlags: 0

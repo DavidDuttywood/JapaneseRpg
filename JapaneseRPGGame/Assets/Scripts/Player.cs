@@ -12,6 +12,7 @@ public class Player : Mover
     protected override void Start()
     {
         base.Start();
+        //transform.SetPositionAndRotation(GameManager.instance.playerLocation, new Quaternion());
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
