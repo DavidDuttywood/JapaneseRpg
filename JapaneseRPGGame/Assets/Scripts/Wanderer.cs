@@ -12,15 +12,14 @@ public class Wanderer : Mover
     private float walkCounter;
     private float waitCounter;
 
-    private int squareWalkingPattern;
     private int walkDirection;
+
     protected override void Start()
     {
         base.Start();
         waitCounter = waitTime;
         walkCounter = walkTime;
         ChooseDirection();
-        squareWalkingPattern = 0;
     }
 
     public void ChooseDirection()
@@ -46,29 +45,26 @@ public class Wanderer : Mover
                 return Random.Range(2, 4);
             case "Vertical":
                 return Random.Range(0, 2);
-            case "Square":
-                return SquareWalkingPattern();
             default:
                 return Random.Range(0, 4);
         }
     }
 
-    //this is an L shape - needs fixing
-    public int SquareWalkingPattern()
-    {
-        if(squareWalkingPattern < 4)
-        {
-            return squareWalkingPattern++;
-        }
-
-        return squareWalkingPattern = 0;
-    }
-
     void OnCollisionEnter2D(Collision2D col)
     {
         //stop walking and make the play stand still
+        if (col.collider.name == "Player")
+        {
+            canMove = false;
+        }
+
         isWalking = false;
         waitCounter = waitTime;
+    }
+
+    void OnCollisionExit2D(Collision2D col)
+    {
+        canMove = true;
     }
 
     private void Wander(Vector2 movement)
@@ -81,32 +77,47 @@ public class Wanderer : Mover
 
     void Update()
     {
-        if (isWalking)
+        if (canMove)
         {
-            walkCounter -= Time.deltaTime;
-            if (walkCounter < 0)
+            if (isWalking)
             {
-                isWalking = false;
-                waitCounter = waitTime;
+                walkCounter -= Time.deltaTime;
+                if (walkCounter < 0)
+                {
+                    isWalking = false;
+                    waitCounter = waitTime;
+                }
+
+                switch (walkDirection)
+                {
+                    case 0:
+                        Wander(new Vector2(0, 1));
+                        break;
+
+                    case 1:
+                        Wander(new Vector2(0, -1));
+                        break;
+
+                    case 2:
+                        Wander(new Vector2(-1, 0));
+                        break;
+
+                    case 3:
+                        Wander(new Vector2(1, 0));
+                        break;
+                }
             }
-
-            switch (walkDirection)
+            else
             {
-                case 0:
-                    Wander(new Vector2(0, 1));
-                    break;
+                animator.SetFloat("Horizontal", 0);
+                animator.SetFloat("Vertical", 0);
+                animator.SetFloat("Speed", 0);
 
-                case 1:
-                    Wander(new Vector2(0, -1));
-                    break;
-
-                case 2:
-                    Wander(new Vector2(-1, 0));
-                    break;
-
-                case 3:
-                    Wander(new Vector2(1, 0));
-                    break;
+                waitCounter -= Time.deltaTime;
+                if (waitCounter < 0)
+                {
+                    ChooseDirection();
+                }
             }
         }
         else
@@ -114,12 +125,6 @@ public class Wanderer : Mover
             animator.SetFloat("Horizontal", 0);
             animator.SetFloat("Vertical", 0);
             animator.SetFloat("Speed", 0);
-
-            waitCounter -= Time.deltaTime;
-            if (waitCounter < 0)
-            {
-                ChooseDirection();
-            }
         }
     }
 }

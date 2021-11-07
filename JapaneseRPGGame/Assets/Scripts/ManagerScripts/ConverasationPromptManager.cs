@@ -22,7 +22,7 @@ public class ConverasationPromptManager : MonoBehaviour
 
     public void CommenceConversation() {
         //handover player and npc position to game manager if possible
-        GameManager.instance.playerLocation = GameManager.instance.player.transform;
+        GameManager.instance.playerTransform = GameManager.instance.player.transform;
         stm.LoadLevel("ConversationScreen");
     }
 

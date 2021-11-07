@@ -20,20 +20,20 @@ public abstract class Mover : MonoBehaviour
 
     protected virtual void UpdateMotor(Vector2 input)
     {
-        if(input.sqrMagnitude != 0)
-        {
-            animator.SetFloat("LastHorizontal", input.x);
-            animator.SetFloat("LastVertical", input.y);
-        }
-        
-        animator.SetFloat("Horizontal", input.x);
-        animator.SetFloat("Vertical", input.y);
-        animator.SetFloat("Speed", input.sqrMagnitude);
-
-        moveDelta = new Vector2(input.x, input.y);
-
         if (canMove)
         {
+            if (input.sqrMagnitude != 0)
+            {
+                animator.SetFloat("LastHorizontal", input.x);
+                animator.SetFloat("LastVertical", input.y);
+            }
+        
+            animator.SetFloat("Horizontal", input.x);
+            animator.SetFloat("Vertical", input.y);
+            animator.SetFloat("Speed", input.sqrMagnitude);
+
+            moveDelta = new Vector2(input.x, input.y);
+        
             rb.MovePosition(rb.position + moveDelta * moveSpeed * Time.fixedDeltaTime);
         }
     }

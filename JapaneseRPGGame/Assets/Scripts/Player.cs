@@ -12,7 +12,10 @@ public class Player : Mover
     protected override void Start()
     {
         base.Start();
-        //transform.SetPositionAndRotation(GameManager.instance.playerLocation, new Quaternion());
+        //this doesnt persist between scene changes
+        //need a static global object
+        //transform.position = GameManager.instance.playerTransform.position;
+        //transform.position = new Vector3(1, 1, 0);
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 

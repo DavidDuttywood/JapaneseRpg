@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialougeBox;
     public Player player;
     public Text dialougeText;
+    public UITextTypeWriter uitt;
 
     public string dialogueLine;
 
@@ -22,7 +23,7 @@ public class DialogueManager : MonoBehaviour
     {
         player.canMove = false;
         dialougeBox.SetActive(true);
-        dialougeText.text = dialogueLine;
+        uitt.Type(dialogueLine);
     }
 
     public void CloseDialogue()

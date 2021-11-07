@@ -6,7 +6,6 @@ public class InteractableNpc : Interactable
 {
     public string[] dialogueLines;
     private Animator animator;
-    private Wanderer wanderer;
     private DialogueManager dialogueManager;
     private ConverasationPromptManager converasationPromptManager;
     private bool dialogueInProcess;
@@ -17,7 +16,6 @@ public class InteractableNpc : Interactable
     {
         base.Start();
         animator = GetComponent<Animator>();
-        wanderer = GetComponent<Wanderer>();
         dialogueManager = FindObjectOfType<DialogueManager>();
         if (canStartConversation)
         {
@@ -41,14 +39,14 @@ public class InteractableNpc : Interactable
 
     protected override void Interact()
     {
-        if (dialogueInProcess == false) { 
-            wanderer.canMove = false;
+        if (dialogueInProcess == false) {
 
             var playerHorizontal = GameManager.instance.player.animator.GetFloat("LastHorizontal");
             var playerVertical = GameManager.instance.player.animator.GetFloat("LastVertical");
 
             animator.SetFloat("LastHorizontal", playerHorizontal * -1);
             animator.SetFloat("LastVertical", playerVertical * -1);
+
             dialogueInProcess = true;
 
             dialogueManager.dialogueLine = dialogueLines[currentLine];
@@ -76,7 +74,6 @@ public class InteractableNpc : Interactable
     public void ResetDialogue()
     {
         dialogueInProcess = false;
-        wanderer.canMove = true;
         dialogueManager.CloseDialogue();
         currentLine = 0;
     }
