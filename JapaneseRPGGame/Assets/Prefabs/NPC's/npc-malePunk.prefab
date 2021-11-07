@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8728909878692326101}
   - component: {fileID: 6406621084518645718}
   - component: {fileID: 2428052552684748552}
+  - component: {fileID: 1153174864010663365}
   - component: {fileID: 3932545643194632481}
   - component: {fileID: 9151229127322002120}
   m_Layer: 0
@@ -156,7 +157,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.42997462, y: 0.9760685}
   m_EdgeRadius: 0
---- !u!114 &3932545643194632481
+--- !u!114 &1153174864010663365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,6 +165,21 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6764285839837238910}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7e199d674027417eb2fd86b117dffd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  moveSpot: {fileID: 0}
+  patrolPoints: []
+--- !u!114 &3932545643194632481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6764285839837238910}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 253769bde0446f445a3dae0371194c6a, type: 3}
   m_Name: 
@@ -187,3 +203,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueLines: []
+  canStartConversation: 0

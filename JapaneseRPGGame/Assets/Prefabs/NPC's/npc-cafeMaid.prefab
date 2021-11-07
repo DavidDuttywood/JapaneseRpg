@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7381198851637310029}
   - component: {fileID: 5162527703710345038}
   - component: {fileID: 4539123303105128336}
-  - component: {fileID: 4044811924172520468}
   - component: {fileID: 3017179872270619065}
+  - component: {fileID: 5288307551831609055}
   - component: {fileID: 7040157632832354896}
   m_Layer: 0
   m_Name: npc-cafeMaid
@@ -157,22 +157,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.42997462, y: 0.9760685}
   m_EdgeRadius: 0
---- !u!114 &4044811924172520468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4797330134635007718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 463bac22e68809448a91d9964ff842ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  waitTime: 0
-  startWaitTime: 0
-  moveSpots: []
 --- !u!114 &3017179872270619065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +175,24 @@ MonoBehaviour:
   walkTime: 1
   movementPattern: Vertical
   waitTime: 5
+--- !u!114 &5288307551831609055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4797330134635007718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90df7afbb4396443ba142cf7847fcf01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  moveSpot: {fileID: 0}
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
 --- !u!114 &7040157632832354896
 MonoBehaviour:
   m_ObjectHideFlags: 0
