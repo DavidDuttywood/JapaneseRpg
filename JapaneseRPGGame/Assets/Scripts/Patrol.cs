@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Patrol : Mover
+public class Patrol : MonoBehaviour
 {
     public float speed;
     private float waitTime;
-
+    private Rigidbody2D rb;
     public Transform moveSpot;
+    private bool canMove;
 
     //set these boundaries for every npc
     public float minX;
@@ -17,8 +18,9 @@ public class Patrol : Mover
 
     void Start()
     {
-        base.Start();
+        canMove = true;
         waitTime = 0;
+        rb = GetComponent<Rigidbody2D>();
         moveSpot.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
     }
 
