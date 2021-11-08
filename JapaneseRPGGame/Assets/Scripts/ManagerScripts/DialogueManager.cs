@@ -19,6 +19,11 @@ public class DialogueManager : MonoBehaviour
         player = FindObjectOfType<Player>();
     }
 
+    public void Update()
+    {
+        GameManager.instance.interactButton.interactable = !uitt.isTyping;
+    }
+
     public void ShowDialogue()
     {
         player.canMove = false;

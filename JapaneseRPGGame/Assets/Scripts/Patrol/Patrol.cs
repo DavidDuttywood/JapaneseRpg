@@ -8,7 +8,7 @@ public class Patrol : MonoBehaviour
     private float waitTime;
     private Rigidbody2D rb;
     public Vector2 moveSpot;
-    private bool canMove;
+    public bool canMove;
     public Animator animator;
 
     protected virtual void Start()

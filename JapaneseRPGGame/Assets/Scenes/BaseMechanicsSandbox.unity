@@ -4410,10 +4410,6 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[3]
       value: 
       objectReference: {fileID: 739545284}
-    - target: {fileID: 3932545643194632481, guid: 9b333eb4860844470a7e5e056437e5bd, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6764285839837238910, guid: 9b333eb4860844470a7e5e056437e5bd, type: 3}
       propertyPath: m_Name
       value: npc-malePunk
@@ -4461,6 +4457,18 @@ PrefabInstance:
     - target: {fileID: 8775957346021360213, guid: 9b333eb4860844470a7e5e056437e5bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151229127322002120, guid: 9b333eb4860844470a7e5e056437e5bd, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151229127322002120, guid: 9b333eb4860844470a7e5e056437e5bd, type: 3}
+      propertyPath: dialogueLines.Array.data[0]
+      value: what are you looking at kid?
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151229127322002120, guid: 9b333eb4860844470a7e5e056437e5bd, type: 3}
+      propertyPath: dialogueLines.Array.data[1]
+      value: get outa here
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b333eb4860844470a7e5e056437e5bd, type: 3}
@@ -8425,10 +8433,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3017179872270619065, guid: c9de72807ff42d145805a020892696df, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4797330134635007718, guid: c9de72807ff42d145805a020892696df, type: 3}
       propertyPath: m_Name
       value: npc-cafeMaid

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6406621084518645718}
   - component: {fileID: 2428052552684748552}
   - component: {fileID: 1153174864010663365}
-  - component: {fileID: 3932545643194632481}
   - component: {fileID: 9151229127322002120}
   m_Layer: 0
   m_Name: npc-malePunk
@@ -170,26 +169,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  moveSpot: {fileID: 0}
+  moveSpot: {x: 0, y: 0}
+  canMove: 0
+  animator: {fileID: 0}
   patrolPoints: []
---- !u!114 &3932545643194632481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6764285839837238910}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 253769bde0446f445a3dae0371194c6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 8728909878692326101}
-  canMove: 1
-  isWalking: 0
-  walkTime: 1
-  movementPattern: Horizontal
-  waitTime: 8
 --- !u!114 &9151229127322002120
 MonoBehaviour:
   m_ObjectHideFlags: 0
