@@ -61,8 +61,6 @@ public class InteractableNpc : Interactable
         }
         else if (dialogueInProcess && currentLine == dialogueLines.Length && canStartConversation)
         {
-            //stash npc location so we can reset it after the conversation
-            GameManager.instance.npcLocation = transform;
             converasationPromptManager.PromptConversation();
         }
         else
