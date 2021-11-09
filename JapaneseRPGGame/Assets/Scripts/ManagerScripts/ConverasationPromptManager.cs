@@ -21,7 +21,7 @@ public class ConverasationPromptManager : MonoBehaviour
     }
 
     public void CommenceConversation() {
-        //handover player and npc position to game manager if possible
+        //handover player and npc position
         GameManager.instance.Save();
         stm.LoadLevel("ConversationScreen");
     }

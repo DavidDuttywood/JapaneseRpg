@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
             float posY = float.Parse(contents[1]);
             player.transform.position = new Vector3(posX, posY);
 
+            conversationPartner = contents[2];
             float posXnpc = float.Parse(contents[3]);
             float posYnpc = float.Parse(contents[4]);
             conversationPartnerPosition = new Vector3(posXnpc, posYnpc);

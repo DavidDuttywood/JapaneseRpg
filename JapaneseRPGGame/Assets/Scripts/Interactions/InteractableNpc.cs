@@ -68,6 +68,7 @@ public class InteractableNpc : Interactable
         {
             GameManager.instance.conversationPartner = name;
             GameManager.instance.conversationPartnerPosition = new Vector3(transform.position.x, transform.position.y);
+            dialogueManager.dialougeBox.SetActive(false);
             converasationPromptManager.PromptConversation();
         }
         else
