@@ -11,21 +11,29 @@ public class GameManager : MonoBehaviour
     public Player player;
     public Button interactButton;
 
+    public string conversationPartner;
+    public Vector3 conversationPartnerPosition;
+
     private const string SAVE_SEPARATOR = "#SAVE-VALUE#";
 
     private void Awake()
     {
+        conversationPartnerPosition = Vector3.zero;
         instance = this;
         Load();
     }
 
     public void Save() {
         Vector3 playerPosition = player.transform.position;
+
         bool somethingElse = false;
         string[] contents = new string[]
         {
             ""+playerPosition.x,
             ""+playerPosition.y,
+            ""+conversationPartner,
+            ""+conversationPartnerPosition.x,
+            ""+conversationPartnerPosition.y,
             ""+somethingElse
         };
 
@@ -44,6 +52,11 @@ public class GameManager : MonoBehaviour
             float posX = float.Parse(contents[0]);
             float posY = float.Parse(contents[1]);
             player.transform.position = new Vector3(posX, posY);
+
+            float posXnpc = float.Parse(contents[3]);
+            float posYnpc = float.Parse(contents[4]);
+            conversationPartnerPosition = new Vector3(posXnpc, posYnpc);
+
         }
     }
 

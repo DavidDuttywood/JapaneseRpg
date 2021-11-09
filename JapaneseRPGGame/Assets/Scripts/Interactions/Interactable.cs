@@ -19,6 +19,7 @@ public class Interactable : MonoBehaviour
         if(collider.name == "Interactor")
         {
             canInteract = true;
+
         }
     }
 

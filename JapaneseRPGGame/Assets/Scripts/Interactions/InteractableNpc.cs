@@ -23,6 +23,11 @@ public class InteractableNpc : Interactable
         }
         currentLine = 0;
         dialogueInProcess = false;
+
+        if(GameManager.instance.conversationPartner == name && GameManager.instance.conversationPartnerPosition != Vector3.zero)
+        {
+            transform.position = GameManager.instance.conversationPartnerPosition;
+        }
     }
 
     public void Update()
@@ -41,9 +46,9 @@ public class InteractableNpc : Interactable
     {
         if (dialogueInProcess == false) {
 
+            // looks at which way the player is facing then sets the npc to look at them
             var playerHorizontal = GameManager.instance.player.animator.GetFloat("LastHorizontal");
             var playerVertical = GameManager.instance.player.animator.GetFloat("LastVertical");
-
             animator.SetFloat("LastHorizontal", playerHorizontal * -1);
             animator.SetFloat("LastVertical", playerVertical * -1);
 
@@ -61,6 +66,8 @@ public class InteractableNpc : Interactable
         }
         else if (dialogueInProcess && currentLine == dialogueLines.Length && canStartConversation)
         {
+            GameManager.instance.conversationPartner = name;
+            GameManager.instance.conversationPartnerPosition = new Vector3(transform.position.x, transform.position.y);
             converasationPromptManager.PromptConversation();
         }
         else

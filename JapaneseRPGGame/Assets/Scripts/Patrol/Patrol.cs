@@ -23,17 +23,32 @@ public class Patrol : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         //stop walking and make the npc stand still
-        if (col.collider.name == "Player")
+        if (col.collider.name == "Player" || col.collider.name ==  "Interactor")
         {
             canMove = false;
             animator.SetFloat("Speed", 0);
         }
     }
 
-    void OnCollisionExit2D(Collision2D col)
+    private void OnTriggerStay2D(Collider2D collider)
+    {
+        if (collider.name == "Interactor")
+        {
+            canMove = false;
+            animator.SetFloat("Speed", 0);
+        }
+    }
+
+    void OnTriggerExit2D()
     {
         StartCoroutine(wait());
     }
+
+    void OnCollisionExit2D()
+    {
+        StartCoroutine(wait());
+    }
+
     IEnumerator wait()
     {
         yield return new WaitForSeconds(3);
