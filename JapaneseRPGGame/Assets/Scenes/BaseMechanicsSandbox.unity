@@ -1302,6 +1302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 560674872}
+  isTyping: 0
 --- !u!1 &600850213
 GameObject:
   m_ObjectHideFlags: 0
@@ -2274,8 +2275,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 600850217}
   interactButton: {fileID: 1261310726}
-  npcLocation: {fileID: 0}
-  playerTransform: {fileID: 0}
+  conversationPartner: 
+  conversationPartnerPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1357419964
 Transform:
   m_ObjectHideFlags: 0
@@ -8483,7 +8484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7040157632832354896, guid: c9de72807ff42d145805a020892696df, type: 3}
       propertyPath: dialogueLines.Array.data[2]
-      value: check out the bakery, it's delicious
+      value: It would be great to get to know you better
       objectReference: {fileID: 0}
     - target: {fileID: 7387714024392301261, guid: c9de72807ff42d145805a020892696df, type: 3}
       propertyPath: m_RootOrder
