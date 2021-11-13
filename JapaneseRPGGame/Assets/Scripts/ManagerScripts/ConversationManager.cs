@@ -6,6 +6,8 @@ using Data;
 
 public class ConversationManager : MonoBehaviour
 {
+    private SceneTransitionManager stm;
+
     public UITextTypeWriter npcText;
     private int currentDialogueItem;
     private Conversation conversation;
@@ -17,11 +19,13 @@ public class ConversationManager : MonoBehaviour
 
     void Start()
     {
+        stm = FindObjectOfType<SceneTransitionManager>();
+
         conversation = new Conversation();
-        conversation = conversation.GenerateTestConversation(); //this is shit
+        conversation = conversation.GenerateTestConversation();
         replyButtons = replyOptions.GetComponentsInChildren<Button>();
 
-        npcText.Type(conversation.ConversationItem[currentDialogueItem].NpcText); //this could be expanded to multi lines with subroutine
+        npcText.Type(conversation.ConversationItems[currentDialogueItem].NpcText); //this could be expanded to multi lines with subroutine
         MapQuestionsToButtons(currentDialogueItem);
     }
 
@@ -34,7 +38,7 @@ public class ConversationManager : MonoBehaviour
             if (b.name.Contains("Option"))
             {
                 Text replyText = b.GetComponentInChildren<Text>();
-                replyText.text = conversation.ConversationItem[currentDialogueItem].Replies[counter];
+                replyText.text = conversation.ConversationItems[currentDialogueItem].Replies[counter];
                 b.onClick.AddListener(delegate { ChooseReply(replyText.text); });
 
             }
@@ -44,11 +48,21 @@ public class ConversationManager : MonoBehaviour
 
     public void ChooseReply(string reply)
     {
-        if(reply == conversation.ConversationItem[currentDialogueItem].CorrectReply)
+        if(reply == conversation.ConversationItems[currentDialogueItem].CorrectReply)
         {
             currentDialogueItem++;
-            npcText.Type(conversation.ConversationItem[currentDialogueItem].NpcText);
-            MapQuestionsToButtons(currentDialogueItem);
+            if (currentDialogueItem < conversation.ConversationItems.Count)
+            {
+                npcText.Type(conversation.ConversationItems[currentDialogueItem].NpcText);
+                MapQuestionsToButtons(currentDialogueItem);
+            }
+            else
+            {
+                CloseReplyMenuOpenMainMenu();
+                npcText.Type(conversation.ExitText);
+                stm.LoadLevel("BaseMechanicsSandbox");
+            }
+
         }
         else
         {
@@ -59,7 +73,7 @@ public class ConversationManager : MonoBehaviour
 
     public void RepeatText()
     {
-        npcText.Type(conversation.ConversationItem[currentDialogueItem].NpcText);
+        npcText.Type(conversation.ConversationItems[currentDialogueItem].NpcText);
     }
 
     public void ShowHelpText()

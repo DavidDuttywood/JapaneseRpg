@@ -5,7 +5,7 @@ namespace Data
 {
     public class Conversation
     {
-        public List<ConversationItem> ConversationItem { get; set; }
+        public List<ConversationItem> ConversationItems { get; set; }
 
         public string GrammarHelp { get; set; }
 
@@ -15,7 +15,7 @@ namespace Data
         {
             return new Conversation
             {
-                ConversationItem = new List<ConversationItem>
+                ConversationItems = new List<ConversationItem>
                 {
                     new ConversationItem
                     {
