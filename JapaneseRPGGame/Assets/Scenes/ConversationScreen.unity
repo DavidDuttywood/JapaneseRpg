@@ -215,9 +215,8 @@ GameObject:
   - component: {fileID: 127649817}
   - component: {fileID: 127649816}
   - component: {fileID: 127649815}
-  - component: {fileID: 127649814}
   m_Layer: 0
-  m_Name: Option1
+  m_Name: Option 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,18 +243,6 @@ RectTransform:
   m_AnchoredPosition: {x: 119.10895, y: 68.72711}
   m_SizeDelta: {x: 199.59033, y: 56}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &127649814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 127649812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e674f1e0426f67d4b9a6dbe3aa4f97c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &127649815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,7 +286,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 127649816}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1026578919}
+        m_TargetAssemblyTypeName: ConversationManager, Assembly-CSharp
+        m_MethodName: ChooseReply
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &127649816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,7 +688,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 303768595}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1026578919}
+        m_TargetAssemblyTypeName: ConversationManager, Assembly-CSharp
+        m_MethodName: ChooseReply
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &303768595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1397,7 +1408,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 742186175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1026578919}
+        m_TargetAssemblyTypeName: ConversationManager, Assembly-CSharp
+        m_MethodName: ChooseReply
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &742186175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2902,7 +2925,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1925573085}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1026578919}
+        m_TargetAssemblyTypeName: ConversationManager, Assembly-CSharp
+        m_MethodName: ChooseReply
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1925573085
 MonoBehaviour:
   m_ObjectHideFlags: 0

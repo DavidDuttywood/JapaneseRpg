@@ -25,6 +25,14 @@ public class ConversationManager : MonoBehaviour
         conversation = conversation.GenerateTestConversation();
         replyButtons = replyOptions.GetComponentsInChildren<Button>();
 
+        //foreach (Button b in replyButtons)
+        //{
+        //    if (b.name.Contains("Option"))
+        //    {
+        //        b.onClick.AddListener(ChooseReply()); //this!!!!!!
+        //    }
+        //}
+
         npcText.Type(conversation.ConversationItems[currentDialogueItem].NpcText); //this could be expanded to multi lines with subroutine
         MapQuestionsToButtons(currentDialogueItem);
     }
@@ -39,16 +47,15 @@ public class ConversationManager : MonoBehaviour
             {
                 Text replyText = b.GetComponentInChildren<Text>();
                 replyText.text = conversation.ConversationItems[currentDialogueItem].Replies[counter];
-                b.onClick.AddListener(delegate { ChooseReply(replyText.text); });
 
             }
             counter++;
         }
     }
 
-    public void ChooseReply(string reply)
+    public void ChooseReply()
     {
-        if(reply == conversation.ConversationItems[currentDialogueItem].CorrectReply)
+        if(this.GetComponentInChildren<Text>().text == conversation.ConversationItems[currentDialogueItem].CorrectReply)
         {
             currentDialogueItem++;
             if (currentDialogueItem < conversation.ConversationItems.Count)
