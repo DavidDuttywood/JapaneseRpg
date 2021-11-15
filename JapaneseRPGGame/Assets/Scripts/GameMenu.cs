@@ -7,12 +7,14 @@ public class GameMenu : MonoBehaviour
 {
     private Animator animator;
     public Button toggleMenu;
+    public GameObject gameMenu;
     public bool isOpen;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         isOpen = false;
+        gameMenu.SetActive(false);
     }
 
     public void ToggleMenu()
@@ -20,12 +22,16 @@ public class GameMenu : MonoBehaviour
         if (isOpen)
         {
             isOpen = false;
-            animator.SetTrigger("CloseMenu");
+            gameMenu.SetActive(false);
+
+            //animator.SetTrigger("CloseMenu");
         }
         else
         {
             isOpen = true;
-            animator.SetTrigger("OpenMenu");
+            gameMenu.SetActive(true);
+
+            //animator.SetTrigger("OpenMenu");
         }
     }
 
