@@ -26,14 +26,14 @@ public class GameMenu : MonoBehaviour
 
         var appendLocation = objectiveDetails.transform.position;
 
-        foreach (string o in objectives)
-        {
-            Button objective = Instantiate(Resources.Load("Objective", typeof(Button))) as Button;
-            objective.GetComponentInChildren<Text>().text = o;
-            objective.transform.SetParent(objectiveList.transform);
+        //foreach (string o in objectives)
+        //{
+        //    Button objective = Instantiate(Resources.Load("Objective", typeof(Button))) as Button;
+        //    objective.GetComponentInChildren<Text>().text = o;
+        //    objective.transform.SetParent(objectiveList.transform);
 
-            objective.onClick.AddListener(delegate { ShowObjective(o); });
-        }
+        //    objective.onClick.AddListener(delegate { ShowObjective(o); });
+        //}
 
         animator = GetComponent<Animator>();
         isOpen = false;
