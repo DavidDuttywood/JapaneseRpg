@@ -31,7 +31,7 @@ public class ConversationManager : MonoBehaviour
         {
             if (b.name.Contains("Option"))
             {
-                b.onClick.AddListener(delegate { ChooseReply(b); }); //this!!!!!!
+                b.onClick.AddListener(delegate { ChooseReply(b); });
             }
         }
 
