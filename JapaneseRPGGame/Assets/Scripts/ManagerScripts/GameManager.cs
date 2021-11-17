@@ -14,52 +14,44 @@ public class GameManager : MonoBehaviour
     public string conversationPartner;
     public Vector3 conversationPartnerPosition;
 
-    private const string SAVE_SEPARATOR = "#SAVE-VALUE#";
+    public GameProgress gameProgress;
+
 
     private void Awake()
     {
         conversationPartnerPosition = Vector3.zero;
         instance = this;
         Load();
+        gameProgress = new GameProgress();
     }
 
-    public void Save() {
+    public void Save()
+    {
         Vector3 playerPosition = player.transform.position;
 
-        bool somethingElse = false;
-        string[] contents = new string[]
-        {
-            ""+playerPosition.x,
-            ""+playerPosition.y,
-            ""+conversationPartner,
-            ""+conversationPartnerPosition.x,
-            ""+conversationPartnerPosition.y,
-            ""+somethingElse
-        };
+        gameProgress.playerPositionX = playerPosition.x;
+        gameProgress.playerPositionY = playerPosition.y;
 
-        string saveString = string.Join(SAVE_SEPARATOR, contents);
-        File.WriteAllText(Application.dataPath + "save.txt", saveString);
+        gameProgress.conversationPartner = conversationPartner;
+        gameProgress.conversationPartnerPositionX = conversationPartnerPosition.y;
+        gameProgress.conversationPartnerPositionY = conversationPartnerPosition.y;
+
+        string json = JsonUtility.ToJson(gameProgress);
+
+        File.WriteAllText(Application.dataPath + "save.json", json);
     }
 
     public void Load()
     {
-        if (File.Exists(Application.dataPath + "save.txt"))
+        if (File.Exists(Application.dataPath + "save.json"))
         {
-            string saveString = File.ReadAllText(Application.dataPath + "save.txt");
+            string saveString = File.ReadAllText(Application.dataPath + "save.json");
+            gameProgress = JsonUtility.FromJson<GameProgress>(saveString);
 
-            string[] contents = saveString.Split(new[] { SAVE_SEPARATOR }, System.StringSplitOptions.None);
-
-            float posX = float.Parse(contents[0]);
-            float posY = float.Parse(contents[1]);
-            player.transform.position = new Vector3(posX, posY);
-
-            conversationPartner = contents[2];
-            float posXnpc = float.Parse(contents[3]);
-            float posYnpc = float.Parse(contents[4]);
-            conversationPartnerPosition = new Vector3(posXnpc, posYnpc);
+            player.transform.position = new Vector3(gameProgress.playerPositionX, gameProgress.playerPositionY);
+            conversationPartner = gameProgress.conversationPartner;
+            conversationPartnerPosition = new Vector3(conversationPartnerPosition.x, conversationPartnerPosition.y);
 
         }
     }
-
-
 }
