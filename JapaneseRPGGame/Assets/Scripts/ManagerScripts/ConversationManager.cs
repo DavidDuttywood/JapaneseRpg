@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Data;
+using static BigData.TestData;
 
 public class ConversationManager : MonoBehaviour
 {
@@ -24,7 +24,7 @@ public class ConversationManager : MonoBehaviour
         stm = FindObjectOfType<SceneTransitionManager>();
 
         conversation = new Conversation();
-        conversation = conversation.GenerateTestConversation();
+        conversation = GenerateTestConversation();
         replyButtons = replyOptions.GetComponentsInChildren<Button>();
 
         foreach (Button b in replyButtons)

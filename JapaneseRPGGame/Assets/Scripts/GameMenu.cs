@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using BigData;
+using System;
 
 public class GameMenu : MonoBehaviour
 {
@@ -10,30 +12,24 @@ public class GameMenu : MonoBehaviour
     public GameObject gameMenu;
     public GameObject objectiveList;
     public GameObject objectiveDetails;
+    public Button buttonTemplate;
 
     public bool isOpen;
 
     void Start()
     {
-        List<string> objectives = new List<string>();
-        objectives.Add("Go to the shop");
-        objectives.Add("Get your hair did");
-        objectives.Add("Talk to the maid");
-        objectives.Add("Find a sushi place to eat");
 
-        //need to store a starting position and then offset it each loop iteration
-        //finally add a mask and scroll rect with a content sizer
+        List<TestData.Objective> objectives = TestData.GenerateObjectives();
 
-        var appendLocation = objectiveDetails.transform.position;
+        foreach (TestData.Objective o in objectives)
+        {
+            Button objective = Instantiate(buttonTemplate);
+            objective.gameObject.SetActive(true);
+            objective.GetComponentInChildren<Text>().text = o.ObjectiveName;
+            objective.transform.SetParent(buttonTemplate.transform.parent, false);
 
-        //foreach (string o in objectives)
-        //{
-        //    Button objective = Instantiate(Resources.Load("Objective", typeof(Button))) as Button;
-        //    objective.GetComponentInChildren<Text>().text = o;
-        //    objective.transform.SetParent(objectiveList.transform);
-
-        //    objective.onClick.AddListener(delegate { ShowObjective(o); });
-        //}
+            objective.onClick.AddListener(delegate { ShowObjective(o.ObjectiveHelpText); });
+        }
 
         animator = GetComponent<Animator>();
         isOpen = false;
@@ -42,7 +38,7 @@ public class GameMenu : MonoBehaviour
 
     public void ShowObjective(string objective)
     {
-        objectiveDetails.GetComponentInChildren<Text>().text = objective + " description text";
+        objectiveDetails.GetComponentInChildren<Text>().text = objective;
     }
 
     public void ToggleMenu()
