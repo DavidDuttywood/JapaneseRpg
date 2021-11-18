@@ -8,11 +8,25 @@ public class Player : Mover
     public Joystick stick;
     public Transform interactor;
     public SpriteRenderer spriteRenderer;
+    public bool colliding;
+    public Collider2D coll;
 
     protected override void Start()
     {
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        colliding = true;
+        coll = collision;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        colliding = false;
+        coll = null;
     }
 
     private void FixedUpdate()

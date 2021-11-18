@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableNpc : Interactable
+public class InteractableNpc : MonoBehaviour
 {
     public string[] dialogueLines;
     private Animator animator;
@@ -12,9 +12,8 @@ public class InteractableNpc : Interactable
     private int currentLine;
     public bool canStartConversation;
 
-    protected override void Start()
+    void Start()
     {
-        base.Start();
         animator = GetComponent<Animator>();
         dialogueManager = FindObjectOfType<DialogueManager>();
         if (canStartConversation)
@@ -42,7 +41,7 @@ public class InteractableNpc : Interactable
         }
     }
 
-    protected override void Interact()
+    void Interact()
     {
         if (dialogueInProcess == false) {
 
