@@ -21,10 +21,10 @@ public class GameManager : MonoBehaviour
     {
         conversationPartnerPosition = Vector3.zero;
         instance = this;
-        Load();
         gameProgress = new GameProgress();
         interactButton.interactable = true;
         interactButton.onClick.AddListener(delegate { InteractButtonClick(); });
+        Load();
     }
 
     public void InteractButtonClick()

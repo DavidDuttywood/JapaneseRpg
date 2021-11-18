@@ -12,7 +12,7 @@ public class InteractableNpc : MonoBehaviour
     private int currentLine;
     public bool canStartConversation;
 
-    void Start()
+    void Awake()
     {
         animator = GetComponent<Animator>();
         dialogueManager = FindObjectOfType<DialogueManager>();

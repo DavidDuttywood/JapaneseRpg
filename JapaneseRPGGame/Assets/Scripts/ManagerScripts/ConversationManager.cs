@@ -8,15 +8,17 @@ public class ConversationManager : MonoBehaviour
 {
     private SceneTransitionManager stm;
 
+
     public UITextTypeWriter npcText;
+
     private int currentDialogueItem;
+
     private Conversation conversation;
+
     public GameObject menu;
     public GameObject helpText;
     public GameObject replyOptions;
     public GameObject backButton;
-    public GameObject repeatButton;
-
 
     private Button[] replyButtons;
 
@@ -58,44 +60,39 @@ public class ConversationManager : MonoBehaviour
 
     public void ChooseReply(Button b)
     {
-        if (!npcText.isTyping)
+        if(b.GetComponentInChildren<Text>().text == conversation.ConversationItems[currentDialogueItem].CorrectReply)
         {
-            if (b.GetComponentInChildren<Text>().text == conversation.ConversationItems[currentDialogueItem].CorrectReply)
+            currentDialogueItem++;
+            if (currentDialogueItem < conversation.ConversationItems.Count)
             {
-                currentDialogueItem++;
-                if (currentDialogueItem < conversation.ConversationItems.Count)
-                {
-                    npcText.Type(conversation.ConversationItems[currentDialogueItem].NpcText);
-                    MapQuestionsToButtons(currentDialogueItem);
-                }
-                else
-                {
-                    ReturnToMainMenu();
-                    npcText.Type(conversation.ExitText);
-                    StartCoroutine("TransitionBackToGame");
-                }
-
+                npcText.Type(conversation.ConversationItems[currentDialogueItem].NpcText);
+                MapQuestionsToButtons(currentDialogueItem);
             }
             else
             {
-                Debug.Log("No, thats not it");
+                ReturnToMainMenu();
+                npcText.Type(conversation.ExitText);
+                StartCoroutine("TransitionBackToGame");
             }
+        }
+        else
+        {
+            Debug.Log("No, thats not it");
         }
         return;
     }
 
     IEnumerator TransitionBackToGame()
     {
+        GameManager.instance.gameProgress.ObjectivesCompleted.Add(1); // check its not just been exited.
+        GameManager.instance.Save();
         yield return new WaitForSeconds(3.0f);
         stm.LoadLevel("BaseMechanicsSandbox");
     }
 
     public void RepeatText()
     {
-        if (!npcText.isTyping)
-        {
-            npcText.Type(conversation.ConversationItems[currentDialogueItem].NpcText);
-        }
+        npcText.Type(conversation.ConversationItems[currentDialogueItem].NpcText);
     }
 
     public void ShowHelpText()
@@ -119,6 +116,4 @@ public class ConversationManager : MonoBehaviour
         replyOptions.SetActive(false);
         menu.SetActive(true);
     }
-
-
 }

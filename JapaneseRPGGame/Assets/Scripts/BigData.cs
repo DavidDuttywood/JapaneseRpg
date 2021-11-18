@@ -7,6 +7,7 @@ namespace BigData {
     {
         public class Objective
         {
+            public int Id { get; set; }
             public string ObjectiveName { get; set; }
             public string ObjectiveHelpText { get; set; }
         }
@@ -17,16 +18,19 @@ namespace BigData {
             {
                 new Objective()
                 {
-                    ObjectiveName = "Go to the shop",
-                    ObjectiveHelpText = "Shops are fun",
+                    Id = 1,
+                    ObjectiveName = "Talk to the Maid",
+                    ObjectiveHelpText = "Practice introductions",
                 },
                 new Objective()
                 {
+                    Id = 2,
                     ObjectiveName = "Go to the station",
                     ObjectiveHelpText = "Stations are fun",
                 },
                 new Objective()
                 {
+                    Id = 3,
                     ObjectiveName = "Talk to your Boss",
                     ObjectiveHelpText = "Hi Boss!",
                 },
