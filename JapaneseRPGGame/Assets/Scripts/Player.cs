@@ -19,8 +19,11 @@ public class Player : Mover
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        colliding = true;
-        coll = collision;
+        if (collision.GetComponent<Collider2D>().GetType() != typeof(UnityEngine.Tilemaps.TilemapCollider2D)) //ignore walking into walls
+        {
+            colliding = true;
+            coll = collision;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

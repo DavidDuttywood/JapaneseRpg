@@ -15,6 +15,8 @@ public class ConversationManager : MonoBehaviour
     public GameObject helpText;
     public GameObject replyOptions;
     public GameObject backButton;
+    public GameObject repeatButton;
+
 
     private Button[] replyButtons;
 
@@ -56,25 +58,28 @@ public class ConversationManager : MonoBehaviour
 
     public void ChooseReply(Button b)
     {
-        if(b.GetComponentInChildren<Text>().text == conversation.ConversationItems[currentDialogueItem].CorrectReply)
+        if (!npcText.isTyping)
         {
-            currentDialogueItem++;
-            if (currentDialogueItem < conversation.ConversationItems.Count)
+            if (b.GetComponentInChildren<Text>().text == conversation.ConversationItems[currentDialogueItem].CorrectReply)
             {
-                npcText.Type(conversation.ConversationItems[currentDialogueItem].NpcText);
-                MapQuestionsToButtons(currentDialogueItem);
+                currentDialogueItem++;
+                if (currentDialogueItem < conversation.ConversationItems.Count)
+                {
+                    npcText.Type(conversation.ConversationItems[currentDialogueItem].NpcText);
+                    MapQuestionsToButtons(currentDialogueItem);
+                }
+                else
+                {
+                    ReturnToMainMenu();
+                    npcText.Type(conversation.ExitText);
+                    StartCoroutine("TransitionBackToGame");
+                }
+
             }
             else
             {
-                ReturnToMainMenu();
-                npcText.Type(conversation.ExitText);
-                StartCoroutine("TransitionBackToGame");
+                Debug.Log("No, thats not it");
             }
-
-        }
-        else
-        {
-            Debug.Log("No, thats not it");
         }
         return;
     }
@@ -87,7 +92,10 @@ public class ConversationManager : MonoBehaviour
 
     public void RepeatText()
     {
-        npcText.Type(conversation.ConversationItems[currentDialogueItem].NpcText);
+        if (!npcText.isTyping)
+        {
+            npcText.Type(conversation.ConversationItems[currentDialogueItem].NpcText);
+        }
     }
 
     public void ShowHelpText()
