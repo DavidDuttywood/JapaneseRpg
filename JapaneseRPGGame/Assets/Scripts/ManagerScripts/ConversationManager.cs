@@ -70,6 +70,7 @@ public class ConversationManager : MonoBehaviour
             }
             else
             {
+                GameManager.instance.MarkObjectiveAsCompleted(1);
                 ReturnToMainMenu();
                 npcText.Type(conversation.ExitText);
                 StartCoroutine("TransitionBackToGame");
@@ -84,8 +85,6 @@ public class ConversationManager : MonoBehaviour
 
     IEnumerator TransitionBackToGame()
     {
-        GameManager.instance.gameProgress.ObjectivesCompleted.Add(1); // check its not just been exited.
-        GameManager.instance.Save();
         yield return new WaitForSeconds(3.0f);
         stm.LoadLevel("BaseMechanicsSandbox");
     }

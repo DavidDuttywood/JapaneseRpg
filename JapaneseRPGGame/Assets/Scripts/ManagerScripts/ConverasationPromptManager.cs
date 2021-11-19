@@ -21,7 +21,14 @@ public class ConverasationPromptManager : MonoBehaviour
     }
 
     public void CommenceConversation() {
-        GameManager.instance.Save();
+        GameManager.instance.playerLocation = new GameProgress.PlayerLocation()
+        {
+            playerPositionX = GameManager.instance.player.transform.position.x,
+            playerPositionY = GameManager.instance.player.transform.position.y,
+        };
+
+        GameManager.instance.SetPlayerLocation();
+
         stm.LoadLevel("ConversationScreen");
     }
 

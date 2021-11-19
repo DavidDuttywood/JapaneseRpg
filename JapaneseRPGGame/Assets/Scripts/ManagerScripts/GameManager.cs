@@ -1,29 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
+using static GameProgress;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public Player player;
     public Button interactButton;
 
+    public Player player;
     public string conversationPartner;
     public Vector3 conversationPartnerPosition;
 
-    public GameProgress gameProgress;
-    //coll.SendMessage("ReceiveDamage", dmg);
+    public PlayerLocation playerLocation;
+    public ObjectiveProgress objectiveProgress;
 
     private void Awake()
     {
-        conversationPartnerPosition = Vector3.zero;
         instance = this;
-        gameProgress = new GameProgress();
         interactButton.interactable = true;
         interactButton.onClick.AddListener(delegate { InteractButtonClick(); });
+
         Load();
     }
 
@@ -35,33 +36,70 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Save()
+    public void SetPlayerLocation()
     {
-        Vector3 playerPosition = player.transform.position;
+        string json = JsonUtility.ToJson(playerLocation);
+        File.WriteAllText(Application.persistentDataPath + "playerLocation.txt", json);
+    }
+    public void SaveConversationPartner()
+    {
+        ConversationPartner conversationPartnerDetails = new ConversationPartner()
+        {
+            conversationPartner = conversationPartner,
+            conversationPartnerPositionX = conversationPartnerPosition.x,
+            conversationPartnerPositionY = conversationPartnerPosition.y,
+        };
 
-        gameProgress.playerPositionX = playerPosition.x;
-        gameProgress.playerPositionY = playerPosition.y;
+        string json = JsonUtility.ToJson(conversationPartner);
+        File.WriteAllText(Application.persistentDataPath + "conversationPartnerCache.txt", json);
+    }
 
-        gameProgress.conversationPartner = conversationPartner;
-        gameProgress.conversationPartnerPositionX = conversationPartnerPosition.y;
-        gameProgress.conversationPartnerPositionY = conversationPartnerPosition.y;
+    void LoadPlayerLocation()
+    {
+        if (File.Exists(Application.persistentDataPath + "playerLocation.txt"))
+        {
+            string saveString = File.ReadAllText(Application.persistentDataPath + "playerLocation.txt");
+            playerLocation = JsonUtility.FromJson<PlayerLocation>(saveString);
 
-        string json = JsonUtility.ToJson(gameProgress);
+            //set the player to correct position;
+            player.transform.position = new Vector3(playerLocation.playerPositionX, playerLocation.playerPositionY);
+            //conversationPartner = playerLocation.conversationPartner;
+            conversationPartnerPosition = new Vector3(conversationPartnerPosition.x, conversationPartnerPosition.y);
+        }
+        else
+        {
+            playerLocation = new PlayerLocation();
+        }
+    }
 
-        File.WriteAllText(Application.persistentDataPath + "save.txt", json);
+    public void MarkObjectiveAsCompleted(int objectiveId)
+    {
+
+        objectiveProgress.ObjectivesInProgress.Remove(objectiveId);
+
+        objectiveProgress.ObjectivesCompleted.Add(objectiveId);
+
+        string json = JsonUtility.ToJson(objectiveProgress);
+        File.WriteAllText(Application.persistentDataPath + "objectiveProgress.txt", json);
+    }
+
+    void LoadObjectiveProgress()
+    {
+        if (File.Exists(Application.persistentDataPath + "objectiveProgress.txt"))
+        {
+            string saveString = File.ReadAllText(Application.persistentDataPath + "objectiveProgress.txt");
+            objectiveProgress = JsonUtility.FromJson<ObjectiveProgress>(saveString);
+        }
+        else
+        {
+            objectiveProgress = new ObjectiveProgress();
+        }
     }
 
     public void Load()
     {
-        if (File.Exists(Application.persistentDataPath + "save.txt"))
-        {
-            string saveString = File.ReadAllText(Application.persistentDataPath + "save.txt");
-            gameProgress = JsonUtility.FromJson<GameProgress>(saveString);
-
-            player.transform.position = new Vector3(gameProgress.playerPositionX, gameProgress.playerPositionY);
-            conversationPartner = gameProgress.conversationPartner;
-            conversationPartnerPosition = new Vector3(conversationPartnerPosition.x, conversationPartnerPosition.y);
-
-        }
+        LoadPlayerLocation();
+        LoadObjectiveProgress();
     }
+
 }
