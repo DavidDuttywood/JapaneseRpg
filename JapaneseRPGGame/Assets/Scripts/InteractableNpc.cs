@@ -8,7 +8,6 @@ public class InteractableNpc : MonoBehaviour
     private Animator animator;
     private DialogueManager dialogueManager;
     private ConverasationPromptManager converasationPromptManager;
-    private bool dialogueInProcess;
     private int currentLine;
     public bool canStartConversation;
 
@@ -16,12 +15,13 @@ public class InteractableNpc : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         dialogueManager = FindObjectOfType<DialogueManager>();
+
         if (canStartConversation)
         {
             converasationPromptManager = FindObjectOfType<ConverasationPromptManager>();
         }
+
         currentLine = 0;
-        dialogueInProcess = false;
 
         if(GameManager.instance.conversationPartner == name && GameManager.instance.conversationPartnerPosition != Vector3.zero)
         {
@@ -29,21 +29,10 @@ public class InteractableNpc : MonoBehaviour
         }
     }
 
-    public void Update()
-    {
-        if (canStartConversation)
-        {
-            if (converasationPromptManager.conversationTerminated)
-            {
-                converasationPromptManager.conversationTerminated = false;
-                ResetDialogue();
-            }
-        }
-    }
-
     void Interact()
     {
-        if (dialogueInProcess == false) {
+        if (currentLine == 0) //this is true for some reason
+        {
 
             // looks at which way the player is facing then sets the npc to look at them
             var playerHorizontal = GameManager.instance.player.animator.GetFloat("LastHorizontal");
@@ -51,35 +40,26 @@ public class InteractableNpc : MonoBehaviour
             animator.SetFloat("LastHorizontal", playerHorizontal * -1);
             animator.SetFloat("LastVertical", playerVertical * -1);
 
-            dialogueInProcess = true;
+            dialogueManager.dialogueLine = dialogueLines[currentLine];
+            dialogueManager.ShowDialogue();
+            currentLine++;
+        }
+        else if (currentLine > 0 && currentLine < dialogueLines.Length)
+        {
+            dialogueManager.dialogueLine = dialogueLines[currentLine];
+            dialogueManager.ShowDialogue();
+            currentLine++;
+        }
+        else if (currentLine == dialogueLines.Length)
+        {
+            dialogueManager.CloseDialogue();
+            currentLine = 0;
 
-            dialogueManager.dialogueLine = dialogueLines[currentLine];
-            dialogueManager.ShowDialogue();
-            currentLine++;
-        }
-        else if (dialogueInProcess && currentLine < dialogueLines.Length)
-        {
-            dialogueManager.dialogueLine = dialogueLines[currentLine];
-            dialogueManager.ShowDialogue();
-            currentLine++;
-        }
-        else if (dialogueInProcess && currentLine == dialogueLines.Length && canStartConversation)
-        {
-            GameManager.instance.conversationPartner = name;
-            GameManager.instance.conversationPartnerPosition = new Vector3(transform.position.x, transform.position.y);
             dialogueManager.dialougeBox.SetActive(false);
-            converasationPromptManager.PromptConversation();
+            if (canStartConversation)
+            {
+                converasationPromptManager.PromptConversation();
+            }
         }
-        else
-        {
-            ResetDialogue();
-        }
-    }
-
-    public void ResetDialogue()
-    {
-        dialogueInProcess = false;
-        dialogueManager.CloseDialogue();
-        currentLine = 0;
     }
 }

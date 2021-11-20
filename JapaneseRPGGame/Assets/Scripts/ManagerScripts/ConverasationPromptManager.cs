@@ -29,6 +29,10 @@ public class ConverasationPromptManager : MonoBehaviour
 
         GameManager.instance.SetPlayerLocation();
 
+        GameManager.instance.conversationPartner = name;
+        GameManager.instance.conversationPartnerPosition = new Vector3(transform.position.x, transform.position.y);
+        GameManager.instance.SaveConversationPartner();
+
         stm.LoadLevel("ConversationScreen");
     }
 
