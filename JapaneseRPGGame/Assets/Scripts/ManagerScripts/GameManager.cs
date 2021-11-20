@@ -72,9 +72,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void BeginNewObjective(int objectiveId)
+    {
+        objectiveProgress.ObjectivesInProgress.Add(objectiveId);
+
+        string json = JsonUtility.ToJson(objectiveProgress);
+        File.WriteAllText(Application.persistentDataPath + "objectiveProgress.txt", json);
+    }
+
     public void MarkObjectiveAsCompleted(int objectiveId)
     {
-
         objectiveProgress.ObjectivesInProgress.Remove(objectiveId);
 
         objectiveProgress.ObjectivesCompleted.Add(objectiveId);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static BigData.TestData;
 
 public class InteractableNpc : MonoBehaviour
 {
@@ -8,13 +9,22 @@ public class InteractableNpc : MonoBehaviour
     private Animator animator;
     private DialogueManager dialogueManager;
     private ConverasationPromptManager converasationPromptManager;
+    private BeginNewObjective beginNewObjective;
     private int currentLine;
+
     public bool canStartConversation;
+    public bool canBeginNewObjective;
+
 
     void Awake()
     {
         animator = GetComponent<Animator>();
         dialogueManager = FindObjectOfType<DialogueManager>();
+
+        if (canBeginNewObjective)
+        {
+            beginNewObjective = transform.Find("Objective").GetComponent<BeginNewObjective>();
+        }
 
         if (canStartConversation)
         {
@@ -31,7 +41,7 @@ public class InteractableNpc : MonoBehaviour
 
     void Interact()
     {
-        if (currentLine == 0) //this is true for some reason
+        if (currentLine == 0)
         {
 
             // looks at which way the player is facing then sets the npc to look at them
@@ -59,6 +69,11 @@ public class InteractableNpc : MonoBehaviour
             if (canStartConversation)
             {
                 converasationPromptManager.PromptConversation();
+            }
+
+            if (canBeginNewObjective)
+            {
+                beginNewObjective.Accept();
             }
         }
     }

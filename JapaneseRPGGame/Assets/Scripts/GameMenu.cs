@@ -18,17 +18,20 @@ public class GameMenu : MonoBehaviour
 
     void Start()
     {
-
         List<TestData.Objective> objectives = TestData.GenerateObjectives();
+        var objectivesInProgress = GameManager.instance.objectiveProgress.ObjectivesInProgress;
 
         foreach (TestData.Objective o in objectives)
         {
-            Button objective = Instantiate(buttonTemplate);
-            objective.gameObject.SetActive(true);
-            objective.GetComponentInChildren<Text>().text = o.ObjectiveName;
-            objective.transform.SetParent(buttonTemplate.transform.parent, false);
+            if (objectivesInProgress.Contains(o.Id)) //filter through so the log shows ones that have been accepted
+            { 
+                Button objective = Instantiate(buttonTemplate);
+                objective.gameObject.SetActive(true);
+                objective.GetComponentInChildren<Text>().text = o.ObjectiveName;
+                objective.transform.SetParent(buttonTemplate.transform.parent, false);
 
-            objective.onClick.AddListener(delegate { ShowObjective(o.ObjectiveHelpText); });
+                objective.onClick.AddListener(delegate { ShowObjective(o.ObjectiveHelpText); });
+            }
         }
 
         animator = GetComponent<Animator>();
