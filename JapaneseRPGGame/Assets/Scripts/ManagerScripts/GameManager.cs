@@ -19,12 +19,17 @@ public class GameManager : MonoBehaviour
     public PlayerLocation playerLocation;
     public ObjectiveProgress objectiveProgress;
 
+    private GameMenu menu;
+
     private void Awake()
     {
         instance = this;
         interactButton.interactable = true;
         interactButton.onClick.AddListener(delegate { InteractButtonClick(); });
 
+        menu = FindObjectOfType<GameMenu>();
+
+        ClearSaveLogsForDebuggingOnly();
         Load();
     }
 
@@ -74,18 +79,27 @@ public class GameManager : MonoBehaviour
 
     public void BeginNewObjective(int objectiveId)
     {
-        objectiveProgress.ObjectivesInProgress.Add(objectiveId);
+        if (!objectiveProgress.ObjectivesInProgress.Contains(objectiveId))
+        {
+            objectiveProgress.ObjectivesInProgress.Add(objectiveId);
+        }
 
         string json = JsonUtility.ToJson(objectiveProgress);
         File.WriteAllText(Application.persistentDataPath + "objectiveProgress.txt", json);
+        menu.AddObjectiveToList();
     }
 
     public void MarkObjectiveAsCompleted(int objectiveId)
     {
-        objectiveProgress.ObjectivesInProgress.Remove(objectiveId);
-
-        objectiveProgress.ObjectivesCompleted.Add(objectiveId);
-
+        if (objectiveProgress.ObjectivesInProgress.Contains(objectiveId))
+        {
+            objectiveProgress.ObjectivesInProgress.Remove(objectiveId);
+        }
+        if (!objectiveProgress.ObjectivesCompleted.Contains(objectiveId))
+        {
+            objectiveProgress.ObjectivesCompleted.Add(objectiveId);
+        }
+        
         string json = JsonUtility.ToJson(objectiveProgress);
         File.WriteAllText(Application.persistentDataPath + "objectiveProgress.txt", json);
     }
@@ -109,4 +123,8 @@ public class GameManager : MonoBehaviour
         LoadObjectiveProgress();
     }
 
+    public void ClearSaveLogsForDebuggingOnly()
+    {
+        File.Delete(Application.persistentDataPath + "objectiveProgress.txt");
+    }
 }

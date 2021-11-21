@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using BigData;
 using System;
+using static BigData.TestData;
 
 public class GameMenu : MonoBehaviour
 {
@@ -18,25 +19,50 @@ public class GameMenu : MonoBehaviour
 
     void Start()
     {
-        List<TestData.Objective> objectives = TestData.GenerateObjectives();
+        List<TestData.ObjectiveItem> objectives = TestData.GenerateObjectives();
         var objectivesInProgress = GameManager.instance.objectiveProgress.ObjectivesInProgress;
 
-        foreach (TestData.Objective o in objectives)
+        foreach (ObjectiveItem o in objectives)
         {
             if (objectivesInProgress.Contains(o.Id)) //filter through so the log shows ones that have been accepted
-            { 
+            {
                 Button objective = Instantiate(buttonTemplate);
                 objective.gameObject.SetActive(true);
                 objective.GetComponentInChildren<Text>().text = o.ObjectiveName;
                 objective.transform.SetParent(buttonTemplate.transform.parent, false);
 
-                objective.onClick.AddListener(delegate { ShowObjective(o.ObjectiveHelpText); });
+                objective.onClick.AddListener(delegate
+                {
+                    ShowObjective(o.ObjectiveHelpText);
+                });
             }
         }
 
         animator = GetComponent<Animator>();
         isOpen = false;
         gameMenu.SetActive(false);
+    }
+
+    public void AddObjectiveToList() //super super inefficient and lame duplication for testing only
+    {
+        List<TestData.ObjectiveItem> objectives = TestData.GenerateObjectives();
+        var objectivesInProgress = GameManager.instance.objectiveProgress.ObjectivesInProgress;
+
+        foreach (ObjectiveItem o in objectives)
+        {
+            if (objectivesInProgress.Contains(o.Id)) //filter through so the log shows ones that have been accepted
+            {
+                Button objective = Instantiate(buttonTemplate);
+                objective.gameObject.SetActive(true);
+                objective.GetComponentInChildren<Text>().text = o.ObjectiveName;
+                objective.transform.SetParent(buttonTemplate.transform.parent, false);
+
+                objective.onClick.AddListener(delegate
+                {
+                    ShowObjective(o.ObjectiveHelpText);
+                });
+            }
+        }
     }
 
     public void ShowObjective(string objective)

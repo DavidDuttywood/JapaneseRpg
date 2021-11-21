@@ -5,30 +5,30 @@ namespace BigData {
 
     public class TestData
     {
-        public class Objective
+        public class ObjectiveItem
         {
             public int Id { get; set; }
             public string ObjectiveName { get; set; }
             public string ObjectiveHelpText { get; set; }
         }
 
-        public static List<Objective> GenerateObjectives()
+        public static List<ObjectiveItem> GenerateObjectives()
         {
-            return new List<Objective>()
+            return new List<ObjectiveItem>()
             {
-                new Objective()
+                new ObjectiveItem()
                 {
                     Id = 1,
                     ObjectiveName = "Talk to the Maid",
                     ObjectiveHelpText = "Practice introductions",
                 },
-                new Objective()
+                new ObjectiveItem()
                 {
                     Id = 2,
                     ObjectiveName = "Go to the station",
                     ObjectiveHelpText = "Stations are fun",
                 },
-                new Objective()
+                new ObjectiveItem()
                 {
                     Id = 3,
                     ObjectiveName = "Talk to your Boss",

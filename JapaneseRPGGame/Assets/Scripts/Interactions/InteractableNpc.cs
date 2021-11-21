@@ -9,21 +9,21 @@ public class InteractableNpc : MonoBehaviour
     private Animator animator;
     private DialogueManager dialogueManager;
     private ConverasationPromptManager converasationPromptManager;
-    private BeginNewObjective beginNewObjective;
+    private Objective objective;
     private int currentLine;
 
     public bool canStartConversation;
     public bool canBeginNewObjective;
 
 
-    void Awake()
+    void Start()
     {
         animator = GetComponent<Animator>();
         dialogueManager = FindObjectOfType<DialogueManager>();
 
         if (canBeginNewObjective)
         {
-            beginNewObjective = transform.Find("Objective").GetComponent<BeginNewObjective>();
+            objective = transform.Find("Objective").GetComponent<Objective>();
         }
 
         if (canStartConversation)
@@ -73,7 +73,7 @@ public class InteractableNpc : MonoBehaviour
 
             if (canBeginNewObjective)
             {
-                beginNewObjective.Accept();
+                objective.Accept();
             }
         }
     }
