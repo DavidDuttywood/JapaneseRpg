@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
         menu = FindObjectOfType<GameMenu>();
 
-        ClearSaveLogsForDebuggingOnly();
+        //ClearSaveLogsForDebuggingOnly();
         Load();
     }
 

@@ -13,8 +13,9 @@ public class InteractableNpc : MonoBehaviour
     private int currentLine;
 
     public bool canStartConversation;
-    public bool canBeginNewObjective;
 
+    public bool canBeginNewObjective;
+    public bool canCompleteObjective;
 
     void Start()
     {
@@ -43,7 +44,6 @@ public class InteractableNpc : MonoBehaviour
     {
         if (currentLine == 0)
         {
-
             // looks at which way the player is facing then sets the npc to look at them
             var playerHorizontal = GameManager.instance.player.animator.GetFloat("LastHorizontal");
             var playerVertical = GameManager.instance.player.animator.GetFloat("LastVertical");

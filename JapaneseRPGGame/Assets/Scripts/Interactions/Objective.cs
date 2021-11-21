@@ -28,13 +28,12 @@ public class Objective : MonoBehaviour //rename to "Objective"
         }
         else if (objectiveIsCompleted)
         {
-            objectiveMarker.color = Color.grey;
+            Destroy(this);
         }
         else //not started
         {
             objectiveMarker.color = Color.green;
         }
-
     }
 
     public void Accept()
@@ -42,6 +41,11 @@ public class Objective : MonoBehaviour //rename to "Objective"
         //add little pop up alert;
         GameManager.instance.BeginNewObjective(objectiveId);
         UpdateProgressMarker();
+    }
 
+    public void Complete()
+    {
+        GameManager.instance.MarkObjectiveAsCompleted(objectiveId);
+        UpdateProgressMarker();
     }
 }
