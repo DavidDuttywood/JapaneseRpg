@@ -7,6 +7,7 @@ public class Portal : MonoBehaviour
     public string destination;
     private SceneTransitionManager stm;
     public Vector2 destinationPosition;
+    public int objectiveId;
 
     void Start()
     {
@@ -20,6 +21,11 @@ public class Portal : MonoBehaviour
             playerPositionX = destinationPosition.x,
             playerPositionY = destinationPosition.y,
         };
+
+        if(objectiveId > 0)
+        {
+            GameManager.instance.MarkObjectiveAsCompleted(objectiveId);
+        }
 
         GameManager.instance.SetPlayerLocation();
         stm.LoadLevel(destination);

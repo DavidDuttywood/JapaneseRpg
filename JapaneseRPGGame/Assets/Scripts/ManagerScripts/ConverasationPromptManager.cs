@@ -7,12 +7,10 @@ public class ConverasationPromptManager : MonoBehaviour
 {
     private SceneTransitionManager stm;
     public GameObject conversationStartPanel;
-    public bool conversationTerminated;
 
     void Start()
     {
         conversationStartPanel.SetActive(false);
-        conversationTerminated = false;
         stm = FindObjectOfType<SceneTransitionManager>();
     }
 
@@ -38,6 +36,5 @@ public class ConverasationPromptManager : MonoBehaviour
 
     public void CancelConversation() {
         conversationStartPanel.SetActive(false);
-        conversationTerminated = true;
     }
 }

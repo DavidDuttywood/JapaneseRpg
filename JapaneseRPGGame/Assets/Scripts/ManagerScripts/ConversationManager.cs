@@ -70,7 +70,7 @@ public class ConversationManager : MonoBehaviour
             }
             else
             {
-                GameManager.instance.MarkObjectiveAsCompleted(1);
+                GameManager.instance.MarkObjectiveAsCompleted(conversation.ObjectiveId);
                 ReturnToMainMenu();
                 npcText.Type(conversation.ExitText);
                 StartCoroutine("TransitionBackToGame");

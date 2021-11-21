@@ -11,6 +11,8 @@ public class Objective : MonoBehaviour //rename to "Objective"
     private bool objectiveInProgress;
     private bool objectiveIsCompleted;
 
+    public string[] afterCompletionDialogueLines;
+
     private void Start()
     {
         objectiveMarker = GetComponentInChildren<SpriteRenderer>();
@@ -28,7 +30,12 @@ public class Objective : MonoBehaviour //rename to "Objective"
         }
         else if (objectiveIsCompleted)
         {
-            Destroy(this);
+            Destroy(this); 
+            Destroy(objectiveMarker);
+            if (transform.GetComponentInParent<InteractableNpc>() != null)
+            {
+                transform.GetComponentInParent<InteractableNpc>().dialogueLines = afterCompletionDialogueLines;
+            }
         }
         else //not started
         {
@@ -39,8 +46,10 @@ public class Objective : MonoBehaviour //rename to "Objective"
     public void Accept()
     {
         //add little pop up alert;
-        GameManager.instance.BeginNewObjective(objectiveId);
-        UpdateProgressMarker();
+        if (!objectiveIsCompleted) { 
+            GameManager.instance.BeginNewObjective(objectiveId);
+            UpdateProgressMarker();
+        }
     }
 
     public void Complete()

@@ -20,7 +20,7 @@ namespace BigData {
                 {
                     Id = 1,
                     ObjectiveName = "Talk to the Maid",
-                    ObjectiveHelpText = "Practice introductions",
+                    ObjectiveHelpText = "Practice <i>introductions</i>",
                 },
                 new ObjectiveItem()
                 {
@@ -45,6 +45,7 @@ namespace BigData {
 
             public string ExitText { get; set; }
 
+            public int ObjectiveId { get; set; } //do this for interactable objects too in future.
         }
 
         public class ConversationItem
@@ -61,34 +62,35 @@ namespace BigData {
             return new Conversation
             {
                 ConversationItems = new List<ConversationItem>
+                {
+                    new ConversationItem
                     {
-                        new ConversationItem
+                        NpcText = "Hi, <i>what</i> is your name?",
+                        Replies = new List<string>()
                         {
-                            NpcText = "Hi, what is your name?",
-                            Replies = new List<string>()
-                            {
-                                "David",
-                                "Yusuke",
-                                "Bob",
-                                "Jerry",
-                            },
-                            CorrectReply = "David"
+                            "David",
+                            "Yusuke",
+                            "Bob",
+                            "Jerry",
                         },
-                        new ConversationItem
-                        {
-                            NpcText = "Cool, Where are you from?",
-                            Replies = new List<string>()
-                            {
-                                "England",
-                                "China",
-                                "Here, Actually",
-                                "Canada",
-                            },
-                            CorrectReply = "England",
-                        }
+                        CorrectReply = "David"
                     },
+                    new ConversationItem
+                    {
+                        NpcText = "Cool, Where are you from?",
+                        Replies = new List<string>()
+                        {
+                            "England",
+                            "China",
+                            "Here, Actually",
+                            "Canada",
+                        },
+                        CorrectReply = "England",
+                    }
+                },
                 GrammarHelp = "This is just a placeholder for an explanation of some grammar",
                 ExitText = "I really feel like we know each other better now!",
+                ObjectiveId = 1,
             };
         }
     }

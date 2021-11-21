@@ -10,6 +10,7 @@ public class UITextTypeWriter : MonoBehaviour
 
 	public void Type(string input)
 	{
+		txt.supportRichText = true;
 		txt.text = "";
 		story = input;
 		StartCoroutine("PlayText");

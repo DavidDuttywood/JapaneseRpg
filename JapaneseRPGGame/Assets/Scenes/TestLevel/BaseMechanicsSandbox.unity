@@ -408,7 +408,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversationStartPanel: {fileID: 1978965749}
-  conversationTerminated: 0
 --- !u!1 &244859982
 GameObject:
   m_ObjectHideFlags: 0
@@ -3607,6 +3606,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveId: 1
   objectiveMarker: {fileID: 1311047801}
+  afterCompletionDialogueLines:
+  - shes friendly huh?
+  - anyway, take care!
 --- !u!1 &1357419962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3820,6 +3822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: RedHouse
   destinationPosition: {x: -0.12, y: -2.49}
+  objectiveId: 0
 --- !u!212 &1399867488
 SpriteRenderer:
   m_ObjectHideFlags: 0
