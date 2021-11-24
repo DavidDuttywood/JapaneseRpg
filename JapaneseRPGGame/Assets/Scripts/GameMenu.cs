@@ -43,25 +43,22 @@ public class GameMenu : MonoBehaviour
         gameMenu.SetActive(false);
     }
 
-    public void AddObjectiveToList() //super super inefficient and lame duplication for testing only
+    public void AddObjectiveToList(int objectiveId) 
     {
         List<TestData.ObjectiveItem> objectives = TestData.GenerateObjectives();
-        var objectivesInProgress = GameManager.instance.objectiveProgress.ObjectivesInProgress;
+        var o = objectives.Find(x => x.Id == objectiveId);
 
-        foreach (ObjectiveItem o in objectives)
+        if (o != null) 
         {
-            if (objectivesInProgress.Contains(o.Id)) //filter through so the log shows ones that have been accepted
-            {
-                Button objective = Instantiate(buttonTemplate);
-                objective.gameObject.SetActive(true);
-                objective.GetComponentInChildren<Text>().text = o.ObjectiveName;
-                objective.transform.SetParent(buttonTemplate.transform.parent, false);
+            Button objective = Instantiate(buttonTemplate);
+            objective.gameObject.SetActive(true);
+            objective.GetComponentInChildren<Text>().text = o.ObjectiveName;
+            objective.transform.SetParent(buttonTemplate.transform.parent, false);
 
-                objective.onClick.AddListener(delegate
-                {
-                    ShowObjective(o.ObjectiveHelpText);
-                });
-            }
+            objective.onClick.AddListener(delegate
+            {
+                ShowObjective(o.ObjectiveHelpText);
+            });
         }
     }
 

@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
         menu = FindObjectOfType<GameMenu>();
 
-        //ClearSaveLogsForDebuggingOnly();
+        //ClearSaveLogs();
         Load();
     }
 
@@ -82,11 +82,10 @@ public class GameManager : MonoBehaviour
         if (!objectiveProgress.ObjectivesInProgress.Contains(objectiveId))
         {
             objectiveProgress.ObjectivesInProgress.Add(objectiveId);
+            string json = JsonUtility.ToJson(objectiveProgress);
+            File.WriteAllText(Application.persistentDataPath + "objectiveProgress.txt", json);
+            menu.AddObjectiveToList(objectiveId);
         }
-
-        string json = JsonUtility.ToJson(objectiveProgress);
-        File.WriteAllText(Application.persistentDataPath + "objectiveProgress.txt", json);
-        menu.AddObjectiveToList();
     }
 
     public void MarkObjectiveAsCompleted(int objectiveId)
@@ -123,8 +122,10 @@ public class GameManager : MonoBehaviour
         LoadObjectiveProgress();
     }
 
-    public void ClearSaveLogsForDebuggingOnly()
+    public void ClearSaveLogs()
     {
         File.Delete(Application.persistentDataPath + "objectiveProgress.txt");
+        File.Delete(Application.persistentDataPath + "conversationPartnerCache.txt");
+        File.Delete(Application.persistentDataPath + "playerLocation.txt");
     }
 }

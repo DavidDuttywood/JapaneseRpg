@@ -25,8 +25,8 @@ namespace BigData {
                 new ObjectiveItem()
                 {
                     Id = 2,
-                    ObjectiveName = "Go to the station",
-                    ObjectiveHelpText = "Stations are fun",
+                    ObjectiveName = "Go to the red building",
+                    ObjectiveHelpText = "whats in it?!",
                 },
                 new ObjectiveItem()
                 {
