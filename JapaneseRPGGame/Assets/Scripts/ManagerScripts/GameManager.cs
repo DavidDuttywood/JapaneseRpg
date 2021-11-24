@@ -93,9 +93,6 @@ public class GameManager : MonoBehaviour
         if (objectiveProgress.ObjectivesInProgress.Contains(objectiveId))
         {
             objectiveProgress.ObjectivesInProgress.Remove(objectiveId);
-        }
-        if (!objectiveProgress.ObjectivesCompleted.Contains(objectiveId))
-        {
             objectiveProgress.ObjectivesCompleted.Add(objectiveId);
         }
         
