@@ -9,7 +9,7 @@ using static GameProgress;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
+    public string sceneName;
     public Button interactButton;
 
     public Player player;
@@ -20,16 +20,20 @@ public class GameManager : MonoBehaviour
     public ObjectiveProgress objectiveProgress;
 
     private GameMenu menu;
+    private NotificationMessageManager nmm;
 
     private void Awake()
     {
+        player = FindObjectOfType<Player>();
+
         instance = this;
         interactButton.interactable = true;
         interactButton.onClick.AddListener(delegate { InteractButtonClick(); });
 
         menu = FindObjectOfType<GameMenu>();
+        nmm = FindObjectOfType<NotificationMessageManager>();
 
-        //ClearSaveLogs();
+        nmm.ShowNotifcation(sceneName);
         Load();
     }
 

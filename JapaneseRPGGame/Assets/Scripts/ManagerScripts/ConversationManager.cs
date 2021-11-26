@@ -8,7 +8,6 @@ public class ConversationManager : MonoBehaviour
 {
     private SceneTransitionManager stm;
 
-
     public UITextTypeWriter npcText;
 
     private int currentDialogueItem;
@@ -21,7 +20,6 @@ public class ConversationManager : MonoBehaviour
     public GameObject backButton;
 
     private Button[] replyButtons;
-
 
     void Start()
     {
