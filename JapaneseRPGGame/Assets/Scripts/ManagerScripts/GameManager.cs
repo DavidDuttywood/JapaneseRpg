@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public PlayerLocation playerLocation;
     public ObjectiveProgress objectiveProgress;
 
-    private GameMenu menu;
+    public GameMenu menu;
     private NotificationMessageManager nmm;
 
     private void Awake()
@@ -27,13 +27,19 @@ public class GameManager : MonoBehaviour
         player = FindObjectOfType<Player>();
 
         instance = this;
-        interactButton.interactable = true;
-        interactButton.onClick.AddListener(delegate { InteractButtonClick(); });
+        if(interactButton != null)
+        {
+            interactButton.interactable = true;
+            interactButton.onClick.AddListener(delegate { InteractButtonClick(); });
+        }
+                if(interactButton != null)
 
-        menu = FindObjectOfType<GameMenu>();
         nmm = FindObjectOfType<NotificationMessageManager>();
 
-        nmm.ShowNotifcation(sceneName);
+        if (nmm != null)
+        {
+            nmm.ShowNotifcation(sceneName);
+        }
         Load();
     }
 
@@ -129,4 +135,5 @@ public class GameManager : MonoBehaviour
         File.Delete(Application.persistentDataPath + "conversationPartnerCache.txt");
         File.Delete(Application.persistentDataPath + "playerLocation.txt");
     }
+
 }
