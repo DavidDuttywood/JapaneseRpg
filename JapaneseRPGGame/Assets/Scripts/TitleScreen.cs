@@ -15,7 +15,7 @@ public class TitleScreen : MonoBehaviour
     public void LoadGame()
     {
         //need a new save value in GameManager to remember which scene
-        stm.LoadLevel("BaseMechanicsSandbox");
+        LoadLevel("BaseMechanicsSandbox");
     }
 
     public void LoadLevel(string targetScene)
