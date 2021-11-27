@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class NotificationMessageManager : MonoBehaviour
 {
+
     public GameObject notificationMessage;
+    private Animator animator;
 
     void Awake()
     {
+        animator = GetComponentInChildren<Animator>();
         notificationMessage = GameObject.Find("NotificationMessage");
         notificationMessage.SetActive(false);
     }
@@ -16,5 +19,6 @@ public class NotificationMessageManager : MonoBehaviour
     {
         notificationMessage.GetComponentInChildren<Text>().text = message;
         notificationMessage.SetActive(true);
+        animator.SetTrigger("ShowNotification");
     }
 }
