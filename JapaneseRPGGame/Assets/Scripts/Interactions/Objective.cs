@@ -7,6 +7,7 @@ public class Objective : MonoBehaviour //rename to "Objective"
 {
     public int objectiveId;
     public SpriteRenderer objectiveMarker;
+    public GameProgress gp;
 
     private bool objectiveInProgress;
     private bool objectiveIsCompleted;
@@ -15,14 +16,15 @@ public class Objective : MonoBehaviour //rename to "Objective"
 
     private void Start()
     {
+        gp = FindObjectOfType<GameProgress>();
         objectiveMarker = GetComponentInChildren<SpriteRenderer>();
         UpdateProgressMarker();
     }
 
     private void UpdateProgressMarker()
     {
-        objectiveInProgress = GameManager.instance.objectiveProgress.ObjectivesInProgress.Contains(objectiveId);
-        objectiveIsCompleted = GameManager.instance.objectiveProgress.ObjectivesCompleted.Contains(objectiveId);
+        objectiveInProgress = gp.objectiveProgress.ObjectivesInProgress.Contains(objectiveId);
+        objectiveIsCompleted = gp.objectiveProgress.ObjectivesCompleted.Contains(objectiveId);
 
         if (objectiveInProgress)
         {

@@ -14,13 +14,16 @@ public class GameMenu : MonoBehaviour
     public GameObject objectiveList;
     public GameObject objectiveDetails;
     public Button buttonTemplate;
+    public GameProgress gp;
 
     public bool isOpen;
 
     void Start()
     {
+        gp = GameObject.Find("persistantGameStuff").GetComponentInChildren<GameProgress>();
+
         List<TestData.ObjectiveItem> objectives = TestData.GenerateObjectives();
-        var objectivesInProgress = GameManager.instance.objectiveProgress.ObjectivesInProgress;
+        var objectivesInProgress = gp.objectiveProgress.ObjectivesInProgress;
 
         foreach (ObjectiveItem o in objectives)
         {

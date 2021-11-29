@@ -6,6 +6,8 @@ public class TitleScreen : MonoBehaviour
 {
     public Animator animator;
     public SceneTransitionManager stm;
+    public GameProgress gp;
+
     public void NewGame()
     {
         GameManager.instance.ClearSaveLogs();
@@ -15,6 +17,7 @@ public class TitleScreen : MonoBehaviour
     public void LoadGame()
     {
         //need a new save value in GameManager to remember which scene
+        gp.LoadObjectiveProgress();
         LoadLevel("BaseMechanicsSandbox");
     }
 

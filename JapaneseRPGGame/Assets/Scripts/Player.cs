@@ -14,6 +14,10 @@ public class Player : Mover
     protected override void Start()
     {
         base.Start();
+
+        GameManager.instance.player = GetComponent<Player>();
+        GameManager.instance.LoadPlayerLocation();
+
         stick = FindObjectOfType<Joystick>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }

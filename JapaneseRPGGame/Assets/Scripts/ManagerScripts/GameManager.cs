@@ -22,9 +22,11 @@ public class GameManager : MonoBehaviour
     public GameMenu menu;
     private NotificationMessageManager nmm;
 
+    public GameProgress gp;
+
     private void Awake()
-    {
-        player = FindObjectOfType<Player>();
+    {     
+        gp = GameObject.Find("persistantGameStuff").GetComponentInChildren<GameProgress>();
 
         instance = this;
         if(interactButton != null)
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
         {
             nmm.ShowNotifcation(sceneName);
         }
-        Load();
+        //Load();
     }
 
     public void InteractButtonClick()
@@ -69,7 +71,7 @@ public class GameManager : MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + "conversationPartnerCache.txt", json);
     }
 
-    void LoadPlayerLocation()
+    public void LoadPlayerLocation()
     {
         if (File.Exists(Application.persistentDataPath + "playerLocation.txt"))
         {
@@ -89,9 +91,9 @@ public class GameManager : MonoBehaviour
 
     public void BeginNewObjective(int objectiveId)
     {
-        if (!objectiveProgress.ObjectivesInProgress.Contains(objectiveId))
+        if (gp.objectiveProgress.ObjectivesInProgress.Contains(objectiveId))
         {
-            objectiveProgress.ObjectivesInProgress.Add(objectiveId);
+            gp.objectiveProgress.ObjectivesInProgress.Add(objectiveId);
             string json = JsonUtility.ToJson(objectiveProgress);
             File.WriteAllText(Application.persistentDataPath + "objectiveProgress.txt", json);
             menu.AddObjectiveToList(objectiveId);
@@ -100,33 +102,19 @@ public class GameManager : MonoBehaviour
 
     public void MarkObjectiveAsCompleted(int objectiveId)
     {
-        if (objectiveProgress.ObjectivesInProgress.Contains(objectiveId))
+        if (gp.objectiveProgress.ObjectivesInProgress.Contains(objectiveId))
         {
-            objectiveProgress.ObjectivesInProgress.Remove(objectiveId);
-            objectiveProgress.ObjectivesCompleted.Add(objectiveId);
+            gp.objectiveProgress.ObjectivesInProgress.Remove(objectiveId);
+            gp.objectiveProgress.ObjectivesCompleted.Add(objectiveId);
         }
         
         string json = JsonUtility.ToJson(objectiveProgress);
         File.WriteAllText(Application.persistentDataPath + "objectiveProgress.txt", json);
     }
 
-    void LoadObjectiveProgress()
-    {
-        if (File.Exists(Application.persistentDataPath + "objectiveProgress.txt"))
-        {
-            string saveString = File.ReadAllText(Application.persistentDataPath + "objectiveProgress.txt");
-            objectiveProgress = JsonUtility.FromJson<ObjectiveProgress>(saveString);
-        }
-        else
-        {
-            objectiveProgress = new ObjectiveProgress();
-        }
-    }
-
     public void Load()
     {
         LoadPlayerLocation();
-        LoadObjectiveProgress();
     }
 
     public void ClearSaveLogs()
