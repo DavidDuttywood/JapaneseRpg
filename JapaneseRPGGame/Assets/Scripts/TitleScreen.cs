@@ -6,6 +6,7 @@ public class TitleScreen : MonoBehaviour
 {
     public Animator animator;
     public SceneTransitionManager stm;
+    public GameObject UI;
     public void NewGame()
     {
         GameManager.instance.ClearSaveLogs();
@@ -26,7 +27,11 @@ public class TitleScreen : MonoBehaviour
     IEnumerator StartGame(string targetScene)
     {
         animator.SetTrigger("buttonPressed");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.5f);
+
+        UI.SetActive(true);
+        
+        GameManager.instance.Load();
         stm.LoadLevel("BaseMechanicsSandbox");
     }
 }

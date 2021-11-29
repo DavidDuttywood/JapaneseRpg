@@ -12,11 +12,11 @@ public class DialogueManager : MonoBehaviour
 
     public string dialogueLine;
 
-    // Start is called before the first frame update
     public void Start()
     {
-        dialougeBox.SetActive(false);
+        //dialougeBox.SetActive(false);
         player = FindObjectOfType<Player>();
+        dialougeBox.SetActive(false);
     }
 
     public void Update()
@@ -26,14 +26,14 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogue()
     {
-        player.canMove = false;
+        //player.canMove = false;
         dialougeBox.SetActive(true);
         uitt.Type(dialogueLine);
     }
 
     public void CloseDialogue()
     {
-        player.canMove = true;
+         //player.canMove = true;
         dialougeBox.SetActive(false);
     }
 }

@@ -24,23 +24,17 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        player = FindObjectOfType<Player>();
-
         instance = this;
         if(interactButton != null)
         {
             interactButton.interactable = true;
             interactButton.onClick.AddListener(delegate { InteractButtonClick(); });
         }
-                if(interactButton != null)
 
         nmm = FindObjectOfType<NotificationMessageManager>();
 
         if (nmm != null)
-        {
             nmm.ShowNotifcation(sceneName);
-        }
-        Load();
     }
 
     public void InteractButtonClick()
@@ -69,7 +63,7 @@ public class GameManager : MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + "conversationPartnerCache.txt", json);
     }
 
-    void LoadPlayerLocation()
+    public void LoadPlayerLocation()
     {
         if (File.Exists(Application.persistentDataPath + "playerLocation.txt"))
         {
@@ -125,7 +119,7 @@ public class GameManager : MonoBehaviour
 
     public void Load()
     {
-        LoadPlayerLocation();
+        //LoadPlayerLocation();
         LoadObjectiveProgress();
     }
 
