@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Mover
 {
     public Vector2 movement;
+
     public Joystick stick;
+    public Button interactButton;
+
     public Transform interactor;
     public SpriteRenderer spriteRenderer;
     public bool colliding;
@@ -15,7 +19,26 @@ public class Player : Mover
     {
         base.Start();
         stick = FindObjectOfType<Joystick>();
+        interactButton = GameObject.Find("UI/InteractButton").GetComponent<Button>();
+
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        GameManager.instance.player = this;
+        GameManager.instance.LoadPlayerLocation();
+
+        if (interactButton != null)
+        {
+            interactButton.interactable = true;
+            interactButton.onClick.AddListener(delegate { InteractButtonClick(); });
+        }
+    }
+
+    public void InteractButtonClick()
+    {
+        if (colliding && coll != null)
+        {
+            coll.SendMessage("Interact");
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)

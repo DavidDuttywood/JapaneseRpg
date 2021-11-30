@@ -9,12 +9,13 @@ public class TitleScreen : MonoBehaviour
     public void NewGame()
     {
         GameManager.instance.ClearSaveLogs();
+        GameManager.instance.InitObjectiveProgress();
         LoadLevel("BaseMechanicsSandbox");
     }
 
     public void LoadGame()
     {
-        //need a new save value in GameManager to remember which scene
+        GameManager.instance.InitObjectiveProgress();
         LoadLevel("BaseMechanicsSandbox");
     }
 

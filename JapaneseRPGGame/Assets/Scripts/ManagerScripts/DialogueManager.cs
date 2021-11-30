@@ -21,7 +21,7 @@ public class DialogueManager : MonoBehaviour
 
     public void Update()
     {
-        GameManager.instance.interactButton.interactable = !uitt.isTyping;
+        player.interactButton.interactable = !uitt.isTyping;
     }
 
     public void ShowDialogue()

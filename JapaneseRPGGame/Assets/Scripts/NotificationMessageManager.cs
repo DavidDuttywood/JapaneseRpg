@@ -7,6 +7,7 @@ public class NotificationMessageManager : MonoBehaviour
 {
 
     public GameObject notificationMessage;
+    public string sceneName;
     private Animator animator;
 
     void Awake()
@@ -14,6 +15,12 @@ public class NotificationMessageManager : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         notificationMessage = GameObject.Find("NotificationMessage");
         notificationMessage.SetActive(false);
+
+        GameManager.instance.nmm = this;
+
+        if(sceneName != null)
+            ShowNotifcation(sceneName);
+
     }
     public void ShowNotifcation(string message)
     {

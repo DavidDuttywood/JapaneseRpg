@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public string sceneName;
-    public Button interactButton;
 
     public Player player;
     public string conversationPartner;
@@ -20,35 +19,12 @@ public class GameManager : MonoBehaviour
     public ObjectiveProgress objectiveProgress;
 
     public GameMenu menu;
-    private NotificationMessageManager nmm;
+    public NotificationMessageManager nmm;
+    public AudioSource music;
 
     private void Awake()
     {
-        player = FindObjectOfType<Player>();
-
         instance = this;
-        if(interactButton != null)
-        {
-            interactButton.interactable = true;
-            interactButton.onClick.AddListener(delegate { InteractButtonClick(); });
-        }
-                if(interactButton != null)
-
-        nmm = FindObjectOfType<NotificationMessageManager>();
-
-        if (nmm != null)
-        {
-            nmm.ShowNotifcation(sceneName);
-        }
-        Load();
-    }
-
-    public void InteractButtonClick()
-    {
-        if (player.colliding && player.coll != null)
-        {
-            player.coll.SendMessage("Interact");
-        }
     }
 
     public void SetPlayerLocation()
@@ -69,7 +45,7 @@ public class GameManager : MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + "conversationPartnerCache.txt", json);
     }
 
-    void LoadPlayerLocation()
+    public void LoadPlayerLocation()
     {
         if (File.Exists(Application.persistentDataPath + "playerLocation.txt"))
         {
@@ -94,7 +70,7 @@ public class GameManager : MonoBehaviour
             objectiveProgress.ObjectivesInProgress.Add(objectiveId);
             string json = JsonUtility.ToJson(objectiveProgress);
             File.WriteAllText(Application.persistentDataPath + "objectiveProgress.txt", json);
-            menu.AddObjectiveToList(objectiveId);
+            menu.AddObjectiveToList(objectiveId); //opening it initialises it
         }
     }
 
@@ -104,13 +80,13 @@ public class GameManager : MonoBehaviour
         {
             objectiveProgress.ObjectivesInProgress.Remove(objectiveId);
             objectiveProgress.ObjectivesCompleted.Add(objectiveId);
+
+            string json = JsonUtility.ToJson(objectiveProgress);
+            File.WriteAllText(Application.persistentDataPath + "objectiveProgress.txt", json);
         }
-        
-        string json = JsonUtility.ToJson(objectiveProgress);
-        File.WriteAllText(Application.persistentDataPath + "objectiveProgress.txt", json);
     }
 
-    void LoadObjectiveProgress()
+    public void InitObjectiveProgress()
     {
         if (File.Exists(Application.persistentDataPath + "objectiveProgress.txt"))
         {
@@ -123,10 +99,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void UINotification(string message)
+    {
+        nmm.ShowNotifcation(message);
+    }
+
     public void Load()
     {
         LoadPlayerLocation();
-        LoadObjectiveProgress();
+        InitObjectiveProgress();
     }
 
     public void ClearSaveLogs()
@@ -136,4 +117,10 @@ public class GameManager : MonoBehaviour
         File.Delete(Application.persistentDataPath + "playerLocation.txt");
     }
 
+    public void ChangeMusic(AudioClip newClip)
+    {
+        music.Stop();
+        music.clip = newClip;
+        music.Play();
+    }
 }
