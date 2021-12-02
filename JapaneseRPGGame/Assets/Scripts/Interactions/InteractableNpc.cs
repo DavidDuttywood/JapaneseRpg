@@ -40,7 +40,7 @@ public class InteractableNpc : MonoBehaviour
         }
     }
 
-    void Interact()
+    public void Interact()
     {
         if (currentLine == 0)
         {
