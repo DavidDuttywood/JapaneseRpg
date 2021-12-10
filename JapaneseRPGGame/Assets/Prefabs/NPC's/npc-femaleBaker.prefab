@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 8728909878692326101}
   - component: {fileID: 6406621084518645718}
   - component: {fileID: 2428052552684748552}
-  - component: {fileID: 3932545643194632481}
-  - component: {fileID: 9151229127322002120}
   m_Layer: 0
   m_Name: npc-femaleBaker
   m_TagString: npc
@@ -78,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: fa3326ba68c16e742b7de438726d0473, type: 3}
+  m_Sprite: {fileID: -8076542536797633547, guid: 61f45847e982e354aa089a0a0ea14455, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -156,34 +154,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.42997462, y: 0.9760685}
   m_EdgeRadius: 0
---- !u!114 &3932545643194632481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6764285839837238910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 253769bde0446f445a3dae0371194c6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 8728909878692326101}
-  canMove: 1
-  isWalking: 0
-  walkTime: 1
-  movementPattern: Horizontal
-  waitTime: 8
---- !u!114 &9151229127322002120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6764285839837238910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93c0cd1f750c61b49be67056c9a137b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueLines: []

@@ -9,11 +9,15 @@ public class TitleScreen : MonoBehaviour
     public void NewGame()
     {
         GameManager.instance.ClearSaveLogs();
-        GameManager.instance.InitObjectiveProgress();
-        LoadLevel("BaseMechanicsSandbox");
+        LoadLevel("NewGameCinematic");
     }
 
     public void LoadGame()
+    {
+        LoadLevel("BaseMechanicsSandbox");
+    }
+
+    public void DebugGame()
     {
         GameManager.instance.InitObjectiveProgress();
         LoadLevel("BaseMechanicsSandbox");
@@ -26,8 +30,9 @@ public class TitleScreen : MonoBehaviour
 
     IEnumerator StartGame(string targetScene)
     {
+        GameManager.instance.InitObjectiveProgress();
         animator.SetTrigger("buttonPressed");
         yield return new WaitForSeconds(3f);
-        stm.LoadLevel("BaseMechanicsSandbox");
+        stm.LoadLevel(targetScene);
     }
 }
