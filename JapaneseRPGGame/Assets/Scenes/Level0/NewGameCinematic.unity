@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 287317980}
   - component: {fileID: 287317982}
   - component: {fileID: 287317981}
+  - component: {fileID: 287317983}
+  - component: {fileID: 287317984}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -158,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -5.9139, y: -37}
-  m_SizeDelta: {x: 555.8453, y: 62.2749}
+  m_AnchoredPosition: {x: -0.000061035, y: 0}
+  m_SizeDelta: {x: 2688, y: 331.1786}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &287317981
 MonoBehaviour:
@@ -183,18 +185,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ba458c1184541476091009c1abe64a66, type: 3}
-    m_FontSize: 30
+    m_FontSize: 125
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Credits will fade in around here
+  m_Text: hello
 --- !u!222 &287317982
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -203,6 +205,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287317979}
   m_CullTransparentMesh: 1
+--- !u!95 &287317983
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287317979}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &287317984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287317979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978a88985fd0b4ad6940233e0c66e280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentText: {fileID: 287317981}
 --- !u!1 &301496048
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 301496049}
   - component: {fileID: 301496050}
+  - component: {fileID: 301496051}
   m_Layer: 0
   m_Name: OpeningCutscene
   m_TagString: Untagged
@@ -254,8 +290,40 @@ PlayableDirector:
     value: {fileID: 1484038316}
   - key: {fileID: -379364448481977141, guid: f8a89c386e3778f41aa70f7446586db8, type: 2}
     value: {fileID: 1942926463}
+  - key: {fileID: 8455004257105665286, guid: f8a89c386e3778f41aa70f7446586db8, type: 2}
+    value: {fileID: 287317983}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &301496051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301496048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 14ad2238cdb78422d82387c3829aaa86, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 287317984}
+          m_TargetAssemblyTypeName: IntroCreditsText, Assembly-CSharp
+          m_MethodName: GetLine
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &530824349
 GameObject:
   m_ObjectHideFlags: 0

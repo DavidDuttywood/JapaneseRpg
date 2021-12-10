@@ -19,7 +19,7 @@ public class Player : Mover
     {
         base.Start();
         stick = FindObjectOfType<Joystick>();
-        interactButton = GameObject.Find("UI/InteractButton").GetComponent<Button>();
+        interactButton = GameObject.Find("Canvas/SafeArea/InteractButton").GetComponent<Button>();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
 

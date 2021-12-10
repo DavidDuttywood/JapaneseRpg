@@ -30,8 +30,10 @@ public class GameManager : MonoBehaviour
     public void SetPlayerLocation()
     {
         string json = JsonUtility.ToJson(playerLocation);
-        File.WriteAllText(Application.persistentDataPath + "playerLocation.txt", json);
+        File.WriteAllText(Path.Combine(Application.persistentDataPath, "playerLocation.txt"), json);
+
     }
+
     public void SaveConversationPartner()
     {
         ConversationPartner conversationPartnerDetails = new ConversationPartner()
@@ -42,7 +44,9 @@ public class GameManager : MonoBehaviour
         };
 
         string json = JsonUtility.ToJson(conversationPartner);
-        File.WriteAllText(Application.persistentDataPath + "conversationPartnerCache.txt", json);
+        //File.WriteAllText(Application.persistentDataPath + "conversationPartnerCache.txt", json);
+        File.WriteAllText(Path.Combine(Application.persistentDataPath, "conversationPartnerCache.txt"), json);
+
     }
 
     public void LoadPlayerLocation()
@@ -69,7 +73,8 @@ public class GameManager : MonoBehaviour
         {
             objectiveProgress.ObjectivesInProgress.Add(objectiveId);
             string json = JsonUtility.ToJson(objectiveProgress);
-            File.WriteAllText(Application.persistentDataPath + "objectiveProgress.txt", json);
+            File.WriteAllText(Path.Combine(Application.persistentDataPath, "objectiveProgress.txt"), json);
+
             menu.AddObjectiveToList(objectiveId); //opening it initialises it
         }
     }
@@ -82,15 +87,16 @@ public class GameManager : MonoBehaviour
             objectiveProgress.ObjectivesCompleted.Add(objectiveId);
 
             string json = JsonUtility.ToJson(objectiveProgress);
-            File.WriteAllText(Application.persistentDataPath + "objectiveProgress.txt", json);
+            File.WriteAllText(Path.Combine(Application.persistentDataPath, "objectiveProgress.txt"), json);
+
         }
     }
 
     public void InitObjectiveProgress()
     {
-        if (File.Exists(Application.persistentDataPath + "objectiveProgress.txt"))
+        if (File.Exists(Path.Combine(Application.persistentDataPath, "objectiveProgress.txt")))
         {
-            string saveString = File.ReadAllText(Application.persistentDataPath + "objectiveProgress.txt");
+            string saveString = File.ReadAllText(Path.Combine(Application.persistentDataPath, "objectiveProgress.txt"));
             objectiveProgress = JsonUtility.FromJson<ObjectiveProgress>(saveString);
         }
         else
@@ -112,9 +118,9 @@ public class GameManager : MonoBehaviour
 
     public void ClearSaveLogs()
     {
-        File.Delete(Application.persistentDataPath + "objectiveProgress.txt");
-        File.Delete(Application.persistentDataPath + "conversationPartnerCache.txt");
-        File.Delete(Application.persistentDataPath + "playerLocation.txt");
+        File.Delete(Path.Combine(Application.persistentDataPath, "objectiveProgress.txt"));
+        File.Delete(Path.Combine(Application.persistentDataPath, "conversationPartnerCache.txt"));
+        File.Delete(Path.Combine(Application.persistentDataPath,"playerLocation.txt"));
     }
 
     public void ChangeMusic(AudioClip newClip)
