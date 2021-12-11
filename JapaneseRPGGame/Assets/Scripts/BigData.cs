@@ -34,11 +34,22 @@ namespace BigData {
                     ObjectiveName = "Talk to your Boss",
                     ObjectiveHelpText = "Hi Boss!",
                 },
+                new ObjectiveItem()
+                {
+                    Id = 4,
+                    ObjectiveName = "Talk to the girl",
+                    ObjectiveHelpText = 
+                    "It looks like something is wrong. You should go and talk to her and see what's wrong. You may find these grammar points and vocab useful: \n"
+                    + "犬　＝　dog ",
+
+                },
             };
         }
 
         public class Conversation
         {
+            public int Id { get; set; }
+
             public List<ConversationItem> ConversationItems { get; set; }
 
             public string GrammarHelp { get; set; }
