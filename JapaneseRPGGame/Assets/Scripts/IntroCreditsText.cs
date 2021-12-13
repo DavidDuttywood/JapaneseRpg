@@ -20,8 +20,6 @@ public class IntroCreditsText : MonoBehaviour
     public void Start()
     {
         i = 0;
-        //StartCoroutine(WaitLoad());
-        //StartCoroutine(GetLine());
     }
 
     public void GetLine()
@@ -29,19 +27,4 @@ public class IntroCreditsText : MonoBehaviour
         currentText.text = introCreditText[i];
         i++;
     }
-
-    //IEnumerator WaitLoad()
-    //{
-    //    yield return new WaitForSecondsRealtime(2);
-    //}
-
-    //IEnumerator GetLine()
-    //{
-    //    currentText.text = introCreditText[i];
-    //    i++;
-
-    //    yield return new WaitForSecondsRealtime(4);
-    //    if(i < introCreditText.Length)
-    //        StartCoroutine(GetLine());
-    //}
 }

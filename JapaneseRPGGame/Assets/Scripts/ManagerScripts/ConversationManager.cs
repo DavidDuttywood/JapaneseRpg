@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using static BigData.TestData;
 
 public class ConversationManager : MonoBehaviour
@@ -19,6 +20,8 @@ public class ConversationManager : MonoBehaviour
     public GameObject replyOptions;
     public GameObject backButton;
 
+    public VideoPlayer background;
+
     private Button[] replyButtons;
 
     void Start()
@@ -28,6 +31,9 @@ public class ConversationManager : MonoBehaviour
         conversation = new Conversation();
         conversation = GenerateTestConversation();
         replyButtons = replyOptions.GetComponentsInChildren<Button>();
+
+        background = GameObject.Find("Canvas").GetComponentInChildren<VideoPlayer>();
+        background.clip = GameManager.instance.conversationBackground;
 
         foreach (Button b in replyButtons)
         {

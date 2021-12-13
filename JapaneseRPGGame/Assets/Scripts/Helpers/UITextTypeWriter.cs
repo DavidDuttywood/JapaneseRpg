@@ -22,7 +22,7 @@ public class UITextTypeWriter : MonoBehaviour
 		foreach (char c in story)
 		{
 			txt.text += c;
-			yield return new WaitForSeconds(0.0625f);
+			yield return new WaitForSeconds(0.00375f);
 		}
 		isTyping = false;
 	}

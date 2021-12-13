@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using static GameProgress;
 
 public class GameManager : MonoBehaviour
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameMenu menu;
     public NotificationMessageManager nmm;
     public AudioSource music;
+    public VideoClip conversationBackground;
 
     private void Awake()
     {

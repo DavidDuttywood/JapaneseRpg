@@ -41,7 +41,6 @@ namespace BigData {
                     ObjectiveHelpText = 
                     "It looks like something is wrong. You should go and talk to her and see what's wrong. You may find these grammar points and vocab useful: \n"
                     + "犬　＝　dog ",
-
                 },
             };
         }

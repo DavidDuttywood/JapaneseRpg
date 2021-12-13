@@ -17,7 +17,7 @@ public class InteractableNpc : MonoBehaviour
     public bool canBeginNewObjective;
     public bool canCompleteObjective;
 
-    void Start()
+    public void Start()
     {
         animator = GetComponent<Animator>();
         dialogueManager = FindObjectOfType<DialogueManager>();
@@ -44,11 +44,29 @@ public class InteractableNpc : MonoBehaviour
     {
         if (currentLine == 0)
         {
-            // looks at which way the player is facing then sets the npc to look at them
-            var playerHorizontal = GameManager.instance.player.animator.GetFloat("LastHorizontal");
-            var playerVertical = GameManager.instance.player.animator.GetFloat("LastVertical");
-            animator.SetFloat("LastHorizontal", playerHorizontal * -1);
-            animator.SetFloat("LastVertical", playerVertical * -1);
+            switch (GameManager.instance.player.GetComponent<SpriteRenderer>().sprite.name)
+            {
+                case "playerWalkingRight":
+                case "playerIdleRight":
+                    animator.SetFloat("LastHorizontal", -1f);
+                    animator.SetFloat("LastVertical", 0f);
+                    break;
+                case "playerWalkingLeft":
+                case "playerIdleLeft":
+                    animator.SetFloat("LastHorizontal", 1f);
+                    animator.SetFloat("LastVertical", 0f);
+                    break;
+                case "playerWalkingUp":
+                case "playerIdleUp":
+                    animator.SetFloat("LastHorizontal", 0f);
+                    animator.SetFloat("LastVertical", -1f);
+                    break;
+                case "playerWalkingDown":
+                case "playerIdleDown":
+                    animator.SetFloat("LastHorizontal", 0f);
+                    animator.SetFloat("LastVertical", 1f);
+                    break;
+            };
 
             dialogueManager.dialogueLine = dialogueLines[currentLine];
             dialogueManager.ShowDialogue();
