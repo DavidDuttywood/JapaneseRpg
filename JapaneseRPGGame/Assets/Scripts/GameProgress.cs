@@ -7,6 +7,7 @@ public class GameProgress
     {
         public float playerPositionX;
         public float playerPositionY;
+        public string sceneName;
     }
 
     public class ConversationPartner

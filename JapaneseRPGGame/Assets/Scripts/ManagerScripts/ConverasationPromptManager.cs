@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ConverasationPromptManager : MonoBehaviour
@@ -23,13 +24,14 @@ public class ConverasationPromptManager : MonoBehaviour
         {
             playerPositionX = GameManager.instance.player.transform.position.x,
             playerPositionY = GameManager.instance.player.transform.position.y,
+            sceneName = SceneManager.GetActiveScene().name,
         };
 
-        GameManager.instance.SetPlayerLocation();
+        GameManager.instance.SetPlayerLocationAndScene();
 
         GameManager.instance.conversationPartner = name;
         GameManager.instance.conversationPartnerPosition = new Vector3(transform.position.x, transform.position.y);
-        GameManager.instance.SaveConversationPartner();
+        //GameManager.instance.SaveConversationPartner();
 
         stm.LoadLevel("ConversationScreen");
     }

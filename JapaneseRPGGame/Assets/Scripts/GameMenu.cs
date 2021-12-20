@@ -17,11 +17,6 @@ public class GameMenu : MonoBehaviour
 
     public bool isOpen;
 
-
-    private void Awake()
-    {
-        Debug.Log("awake");
-    }
     void Start()
     {
         //attach to GameManager

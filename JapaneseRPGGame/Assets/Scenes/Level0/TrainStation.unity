@@ -6844,7 +6844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf864246e45d9042ae69ac165350c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookAt: {fileID: 824013187}
+  lookAt: {fileID: 824013185}
   boundX: 2
   boundY: 2
 --- !u!95 &458312626
@@ -7716,7 +7716,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0.6561, y: 0}
-  m_SizeDelta: {x: 22, y: 5}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &764729499
 MonoBehaviour:
@@ -8390,7 +8390,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -13570,7 +13570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1302239897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14656,6 +14656,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5288307551831609055, guid: c9de72807ff42d145805a020892696df, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1812902536}
+    - target: {fileID: 5288307551831609055, guid: c9de72807ff42d145805a020892696df, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -14725,6 +14729,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9de72807ff42d145805a020892696df, type: 3}
+--- !u!95 &1812902536 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7381198851637310029, guid: c9de72807ff42d145805a020892696df, type: 3}
+  m_PrefabInstance: {fileID: 1812902535}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1832292450
 GameObject:
   m_ObjectHideFlags: 0
@@ -14869,8 +14878,6 @@ PlayableDirector:
     value: {fileID: 824013188}
   - key: {fileID: -2759236259020529617, guid: 2d6014e56db1959478ff1e25f58f95d2, type: 2}
     value: {fileID: 824013185}
-  - key: {fileID: -3007850166969202887, guid: 2d6014e56db1959478ff1e25f58f95d2, type: 2}
-    value: {fileID: 458312626}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &1850601908

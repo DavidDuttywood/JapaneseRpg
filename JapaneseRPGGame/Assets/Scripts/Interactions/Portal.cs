@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Portal : MonoBehaviour
         {
             playerPositionX = destinationPosition.x,
             playerPositionY = destinationPosition.y,
+            //sceneName = SceneManager.GetActiveScene().name,
         };
 
         if(objectiveId > 0)
@@ -27,7 +29,7 @@ public class Portal : MonoBehaviour
             GameManager.instance.MarkObjectiveAsCompleted(objectiveId);
         }
 
-        GameManager.instance.SetPlayerLocation();
+        GameManager.instance.SetPlayerLocationAndScene();
         stm.LoadLevel(destination);
     }
 }

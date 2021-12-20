@@ -13,10 +13,11 @@ public class GameManager : MonoBehaviour
     public string sceneName;
 
     public Player player;
+    public PlayerLocation playerLocation;
+
     public string conversationPartner;
     public Vector3 conversationPartnerPosition;
 
-    public PlayerLocation playerLocation;
     public ObjectiveProgress objectiveProgress;
 
     public GameMenu menu;
@@ -24,12 +25,13 @@ public class GameManager : MonoBehaviour
     public AudioSource music;
     public VideoClip conversationBackground;
 
+
     private void Awake()
     {
         instance = this;
     }
 
-    public void SetPlayerLocation()
+    public void SetPlayerLocationAndScene()
     {
         string json = JsonUtility.ToJson(playerLocation);
         File.WriteAllText(Path.Combine(Application.persistentDataPath, "playerLocation.txt"), json);
@@ -53,15 +55,16 @@ public class GameManager : MonoBehaviour
 
     public void LoadPlayerLocation()
     {
-        if (File.Exists(Application.persistentDataPath + "playerLocation.txt"))
+        if (File.Exists(Path.Combine(Application.persistentDataPath, "/playerLocation.txt"))) //DW - HERE, filepath fooked
         {
-            string saveString = File.ReadAllText(Application.persistentDataPath + "playerLocation.txt");
+            string saveString = File.ReadAllText(Application.persistentDataPath + "/playerLocation.txt");
             playerLocation = JsonUtility.FromJson<PlayerLocation>(saveString);
 
             //set the player to correct position;
             player.transform.position = new Vector3(playerLocation.playerPositionX, playerLocation.playerPositionY);
             //conversationPartner = playerLocation.conversationPartner;
             conversationPartnerPosition = new Vector3(conversationPartnerPosition.x, conversationPartnerPosition.y);
+            sceneName = playerLocation.sceneName;
         }
         else
         {

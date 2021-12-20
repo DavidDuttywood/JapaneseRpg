@@ -24,7 +24,7 @@ public class ConversationManager : MonoBehaviour
 
     private Button[] replyButtons;
 
-    void Start()
+    void Awake()
     {
         stm = FindObjectOfType<SceneTransitionManager>();
 
@@ -42,9 +42,10 @@ public class ConversationManager : MonoBehaviour
                 b.onClick.AddListener(delegate { ChooseReply(b); });
             }
         }
-
         npcText.Type(conversation.ConversationItems[currentDialogueItem].NpcText); //this could be expanded to multi lines with subroutine
         MapQuestionsToButtons(currentDialogueItem);
+        GameManager.instance.LoadPlayerLocation();
+
     }
 
     public void MapQuestionsToButtons(int currentDialogueItem)
@@ -87,10 +88,16 @@ public class ConversationManager : MonoBehaviour
         return;
     }
 
+    public void ReturnToGame()
+    {
+        stm.LoadLevel(GameManager.instance.sceneName);
+    }
+
     IEnumerator TransitionBackToGame()
     {
         yield return new WaitForSeconds(3.0f);
-        stm.LoadLevel("BaseMechanicsSandbox");
+        GameManager.instance.LoadPlayerLocation();
+        stm.LoadLevel(GameManager.instance.sceneName);
     }
 
     public void RepeatText()

@@ -1957,6 +1957,7 @@ MonoBehaviour:
   helpText: {fileID: 1324681084}
   replyOptions: {fileID: 364267166}
   backButton: {fileID: 153699728}
+  background: {fileID: 0}
 --- !u!4 &1026578920
 Transform:
   m_ObjectHideFlags: 0
@@ -2611,10 +2612,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1618620876}
-        m_TargetAssemblyTypeName: SceneTransitionManager, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 5
+      - m_Target: {fileID: 1026578919}
+        m_TargetAssemblyTypeName: ConversationManager, Assembly-CSharp
+        m_MethodName: ReturnToGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2730,17 +2731,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 725d255ea81f126409dae68bb1f0c99a, type: 3}
---- !u!114 &1618620876 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6540624528697613270, guid: 725d255ea81f126409dae68bb1f0c99a, type: 3}
-  m_PrefabInstance: {fileID: 1618620875}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618620877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89176eb769cb7b347a8c86ba2ae93ca3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1618620877 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6540624528697613268, guid: 725d255ea81f126409dae68bb1f0c99a, type: 3}
