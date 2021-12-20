@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -55,9 +56,9 @@ public class GameManager : MonoBehaviour
 
     public void LoadPlayerLocation()
     {
-        if (File.Exists(Path.Combine(Application.persistentDataPath, "/playerLocation.txt"))) //DW - HERE, filepath fooked
+        if (File.Exists(Path.Join(Application.persistentDataPath, "playerLocation.txt"))) 
         {
-            string saveString = File.ReadAllText(Application.persistentDataPath + "/playerLocation.txt");
+            string saveString = File.ReadAllText(Path.Join(Application.persistentDataPath , "playerLocation.txt"));
             playerLocation = JsonUtility.FromJson<PlayerLocation>(saveString);
 
             //set the player to correct position;
@@ -80,8 +81,15 @@ public class GameManager : MonoBehaviour
             string json = JsonUtility.ToJson(objectiveProgress);
             File.WriteAllText(Path.Combine(Application.persistentDataPath, "objectiveProgress.txt"), json);
 
-            menu.AddObjectiveToList(objectiveId); //opening it initialises it
+            menu.AddObjectiveToList(objectiveId);
         }
+    }
+
+    public string GetCurrentLevel()
+    {
+            string saveString = File.ReadAllText(Path.Join(Application.persistentDataPath, "playerLocation.txt"));
+            playerLocation = JsonUtility.FromJson<PlayerLocation>(saveString);
+            return playerLocation.sceneName;
     }
 
     public void MarkObjectiveAsCompleted(int objectiveId)
@@ -93,7 +101,6 @@ public class GameManager : MonoBehaviour
 
             string json = JsonUtility.ToJson(objectiveProgress);
             File.WriteAllText(Path.Combine(Application.persistentDataPath, "objectiveProgress.txt"), json);
-
         }
     }
 
@@ -126,6 +133,7 @@ public class GameManager : MonoBehaviour
         File.Delete(Path.Combine(Application.persistentDataPath, "objectiveProgress.txt"));
         File.Delete(Path.Combine(Application.persistentDataPath, "conversationPartnerCache.txt"));
         File.Delete(Path.Combine(Application.persistentDataPath,"playerLocation.txt"));
+        File.Delete(Path.Combine(Application.persistentDataPath, "cutscenes.txt"));
     }
 
     public void ChangeMusic(AudioClip newClip)

@@ -44,8 +44,6 @@ public class ConversationManager : MonoBehaviour
         }
         npcText.Type(conversation.ConversationItems[currentDialogueItem].NpcText); //this could be expanded to multi lines with subroutine
         MapQuestionsToButtons(currentDialogueItem);
-        GameManager.instance.LoadPlayerLocation();
-
     }
 
     public void MapQuestionsToButtons(int currentDialogueItem)
@@ -90,14 +88,13 @@ public class ConversationManager : MonoBehaviour
 
     public void ReturnToGame()
     {
-        stm.LoadLevel(GameManager.instance.sceneName);
+        StartCoroutine("TransitionBackToGame");
     }
 
     IEnumerator TransitionBackToGame()
     {
-        yield return new WaitForSeconds(3.0f);
-        GameManager.instance.LoadPlayerLocation();
-        stm.LoadLevel(GameManager.instance.sceneName);
+        yield return new WaitForSeconds(3.0f);  
+        stm.LoadLevel(GameManager.instance.GetCurrentLevel());
     }
 
     public void RepeatText()

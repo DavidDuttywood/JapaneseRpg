@@ -79,4 +79,33 @@ public class Player : Mover
 
         UpdateMotor(new Vector2(movement.x, movement.y));
     }
+
+    //this clicks but also updates the animator based off current sprite;
+    //use this when invoking click from timeline animation.
+    public void InteractClickFromTrigger() {
+        switch (spriteRenderer.sprite.name)
+        {
+            case "playerWalkingRight":
+            case "playerIdleRight":
+                animator.SetFloat("LastHorizontal", 1f);
+                animator.SetFloat("LastVertical", 0f);
+                break;
+            case "playerWalkingLeft":
+            case "playerIdleLeft":
+                animator.SetFloat("LastHorizontal", -1f);
+                animator.SetFloat("LastVertical", 0f);
+                break;
+            case "playerWalkingUp":
+            case "playerIdleUp":
+                animator.SetFloat("LastHorizontal", 0f);
+                animator.SetFloat("LastVertical", 1f);
+                break;
+            case "playerWalkingDown":
+            case "playerIdleDown":
+                animator.SetFloat("LastHorizontal", 0f);
+                animator.SetFloat("LastVertical", -1f);
+                break;
+        }
+        InteractButtonClick();
+    }
 }

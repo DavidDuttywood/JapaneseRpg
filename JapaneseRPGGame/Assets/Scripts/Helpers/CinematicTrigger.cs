@@ -18,7 +18,7 @@ public class CinematicTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.name == "Interactor" && !hasPlayed)
+        if (collider.name == "Player" && !hasPlayed)
         {
             player.canMove = false;
             player.animator.SetFloat("Speed", 0);
@@ -29,7 +29,7 @@ public class CinematicTrigger : MonoBehaviour
     {
         timeline.Play();
         yield return new WaitForSeconds((float)timeline.duration);
-        player.canMove = true;
+        //player.canMove = true;
         hasPlayed = true;
     }
 }

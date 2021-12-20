@@ -31,12 +31,12 @@ public class DialogueManager : MonoBehaviour
         uitt.Type(dialogueLine);
     }
 
-    public void ShowDialogueCutscene(string msg)
-    {
-        player.canMove = false;
-        dialougeBox.SetActive(true);
-        uitt.Type(msg);
-    }
+    //public void ShowDialogueCutscene(string msg)
+    //{
+    //    player.canMove = false;
+    //    dialougeBox.SetActive(true);
+    //    uitt.Type(msg);
+    //}
 
     public void CloseDialogue()
     {
